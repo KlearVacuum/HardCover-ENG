@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//This script is on the player
 public class PortalControl : MonoBehaviour
 {
-    [SerializeField] KeyCode portalKey;
     [HideInInspector]
     public List<PortalTrigger> activePortals;
+
+    [SerializeField] KeyCode portalKey;
 
     private void Start()
     {
@@ -20,7 +22,7 @@ public class PortalControl : MonoBehaviour
             // Show "Press E" thingy on UI
             if (Input.GetKeyDown(portalKey))
             {
-                activePortals[0].Teleport(gameObject);
+                activePortals[0].StartInteraction();
             }
         }
     }
