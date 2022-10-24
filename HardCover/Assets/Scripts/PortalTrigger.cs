@@ -8,7 +8,7 @@ public class PortalTrigger : MonoBehaviour, IInteractable
 
     private void Teleport(GameObject go)
     {
-        if (GlobalGameData.portalCooldown < 0 && go != null)
+        if (GlobalGameData.portalCooldown <= 0 && go != null)
         {
             GlobalGameData.portalCooldown = 0.5f;
             go.transform.position = destination.position;
