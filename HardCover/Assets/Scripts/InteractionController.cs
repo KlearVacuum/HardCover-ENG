@@ -15,13 +15,16 @@ public class InteractionController : MonoBehaviour
             {
                 if (interactableObj is IInteractableAndActionable iia)
                 {
-                    if (iia.IsInteracting())
+                    if (!iia.IsActioning())
                     {
-                        iia.EndInteraction();
-                    }
-                    else
-                    {
-                        iia.StartInteraction();
+                        if (iia.IsInteracting())
+                        {
+                            iia.EndInteraction();
+                        }
+                        else
+                        {
+                            iia.StartInteraction();
+                        }
                     }
                 }
                 else
@@ -37,7 +40,7 @@ public class InteractionController : MonoBehaviour
                     {
                         iia.EndAction();
                     }
-                    else
+                    else if (iia.IsInteracting())
                     {
                         iia.StartAction();
                     }
