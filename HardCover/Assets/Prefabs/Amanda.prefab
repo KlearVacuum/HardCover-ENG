@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5412673399827778410}
   - component: {fileID: 8036997961900651794}
   - component: {fileID: 8036997961900651795}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Amanda
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -49,6 +49,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582496acd67f24a4b8166fee4265cf53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knowledgeUI: {fileID: 0}
+  energyUI: {fileID: 0}
+  cashUI: {fileID: 0}
 --- !u!212 &8036997961900651793
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -128,8 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ecdccc55bf673e4aaae4a38651c27af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalKey: 101
   activePortals: []
+  portalKey: 101
 --- !u!50 &8036997961900651794
 Rigidbody2D:
   serializedVersion: 4
