@@ -6,7 +6,7 @@ public class PortalTrigger : MonoBehaviour, IInteractable
 
     private GameObject inCollisionWith;
 
-    private void Teleport(GameObject go)
+    public void Teleport(GameObject go)
     {
         if (GlobalGameData.portalCooldown <= 0 && go != null)
         {
