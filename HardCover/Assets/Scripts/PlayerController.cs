@@ -6,8 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     [SerializeField] float maxMoveForce;
-    [Range(0,1)]
-    [SerializeField] float stopDampenRatio;
+    [Range(0, 1)] [SerializeField] float stopDampenRatio;
     Vector2 moveForce;
 
     Rigidbody2D rb;
@@ -16,9 +15,9 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -36,6 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         moveForce.x += Input.GetAxisRaw("Horizontal") * moveSpeed * rb.mass * Time.deltaTime;
     }
+
     void MovementForce()
     {
         if (moveForce != Vector2.zero)
@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
             {
                 rb.AddForce(moveForce);
             }
+
             moveForce = Vector2.zero;
         }
         else

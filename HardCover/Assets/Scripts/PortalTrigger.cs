@@ -1,28 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PortalTrigger : MonoBehaviour
+public class PortalTrigger : MonoBehaviour, IInteractable
 {
     public Transform destination;
-<<<<<<< Updated upstream
-    public void Teleport(GameObject GO)
-=======
 
     private GameObject inCollisionWith;
 
-    public void Teleport(GameObject go)
->>>>>>> Stashed changes
+    private void Teleport(GameObject go)
     {
-        if (GlobalGameData.portalCooldown > 0) return;
-
-        GO.transform.position = destination.position;
-        GlobalGameData.portalCooldown = 0.5f;
+        if (GlobalGameData.portalCooldown <= 0 && go != null)
+        {
+            GlobalGameData.portalCooldown = 0.5f;
+            go.transform.position = destination.position;
+        }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            inCollisionWith = collision.gameObject;
             collision.GetComponent<PortalControl>().activePortals.Add(this);
         }
     }
@@ -31,7 +28,13 @@ public class PortalTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            inCollisionWith = null;
             collision.GetComponent<PortalControl>().activePortals.Remove(this);
         }
+    }
+
+    public void StartInteraction()
+    {
+        Teleport(inCollisionWith);
     }
 }
