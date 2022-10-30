@@ -5,7 +5,14 @@ using UnityEngine;
 public class PortalTrigger : MonoBehaviour
 {
     public Transform destination;
+<<<<<<< Updated upstream
     public void Teleport(GameObject GO)
+=======
+
+    private GameObject inCollisionWith;
+
+    public void Teleport(GameObject go)
+>>>>>>> Stashed changes
     {
         if (GlobalGameData.portalCooldown > 0) return;
 
