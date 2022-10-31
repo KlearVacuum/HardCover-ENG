@@ -5,6 +5,12 @@ public interface IInteractable
     void StartInteraction(GameObject interactor);
 }
 
+public interface IToggleInteractable : IInteractable
+{
+    void EndInteraction();
+    bool IsInteracting();
+}
+
 public interface IActionable
 {
     void StartAction();
@@ -12,8 +18,6 @@ public interface IActionable
     bool IsActioning();
 }
 
-public interface IInteractableAndActionable : IInteractable, IActionable
+public interface IInteractableAndActionable : IToggleInteractable, IActionable
 {
-    void EndInteraction();
-    bool IsInteracting();
 }

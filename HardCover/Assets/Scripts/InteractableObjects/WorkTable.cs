@@ -2,7 +2,7 @@
 
 public class WorkTable : MonoBehaviour, IInteractableAndActionable
 {
-    private bool isInteracting, isActioning;
+    private bool isInteracting;
 
     //TODO: KEFF FILL IN WHAT A WORK NEEDS
     private float mEnergyCost;
@@ -38,15 +38,12 @@ public class WorkTable : MonoBehaviour, IInteractableAndActionable
     public void StartAction()
     {
         // Start working
-        isActioning = true;
-        Debug.Log("Start working");
+        Debug.Log("Work and Start TimeSkip");
     }
 
     public void EndAction()
     {
-        // Stop Working
-        isActioning = false;
-        Debug.Log("Stop working");
+        //Blank
     }
 
     public bool IsInteracting()
@@ -56,6 +53,6 @@ public class WorkTable : MonoBehaviour, IInteractableAndActionable
 
     public bool IsActioning()
     {
-        return isActioning;
+        return false;
     }
 }

@@ -2,18 +2,8 @@
 
 public class Book : MonoBehaviour, IInteractableAndActionable
 {
-    private bool isInteracting, isActioning;
-
-    //TODO: KEFF FILL IN WHAT A BOOK NEEDS
-    private float mEnergyCost;
-
-    public float energyCost
-    {
-        get => mEnergyCost;
-        set => mEnergyCost = value;
-    }
-
-    private float mKnowledgeValue;
+    // This is how much knowledge left the player can gain from the book
+    private float mKnowledgeValue = 100.0f;
 
     public float knowledgeValue
     {
@@ -21,17 +11,62 @@ public class Book : MonoBehaviour, IInteractableAndActionable
         set => mKnowledgeValue = value;
     }
 
+    // This is the name of owner
+    private string mOwnerName;
+
+    public string ownerName
+    {
+        get => mOwnerName;
+        set => mOwnerName = value;
+    }
+
+    private Vector3 mDefaultPosition;
+
+    private void Awake()
+    {
+        mDefaultPosition = transform.position;
+    }
+
+    private void Update()
+    {
+        if (theInteractor != null)
+        {
+            transform.position = theInteractor.transform.position;
+        }
+    }
+
+    public void ResetPosition()
+    {
+        transform.position = mDefaultPosition;
+    }
+
+    public void PlayerGotCaught()
+    {
+        EndInteraction();
+        ResetPosition();
+    }
+
+    // ========================================================
+    // ALL INTERFACE THINGS
+    // ========================================================
+
+    // ========================================================
+    // IInteractableAndActionable
+    // ========================================================
+    private bool isActioning;
+    private GameObject theInteractor;
+
     public void StartInteraction(GameObject interactor)
     {
         // Pick Up Book
-        isInteracting = true;
+        theInteractor = interactor;
         Debug.Log("Pick up Book");
     }
 
     public void EndInteraction()
     {
         // Drop Book
-        isInteracting = false;
+        theInteractor = null;
         Debug.Log("Drop Book");
     }
 
@@ -51,7 +86,7 @@ public class Book : MonoBehaviour, IInteractableAndActionable
 
     public bool IsInteracting()
     {
-        return isInteracting;
+        return theInteractor != null;
     }
 
     public bool IsActioning()

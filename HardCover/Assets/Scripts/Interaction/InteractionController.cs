@@ -14,39 +14,53 @@ public class InteractionController : MonoBehaviour
         {
             if (Input.GetKeyDown(interactKey))
             {
-                if (interactableObj is IInteractableAndActionable iia)
+                if (interactableObj is IInteractableAndActionable iia) // ToggleInteractable and Actionable
                 {
                     if (!iia.IsActioning())
                     {
-                        if (iia.IsInteracting())
-                        {
-                            iia.EndInteraction();
-                        }
-                        else
-                        {
-                            iia.StartInteraction(gameObject);
-                        }
+                        ToggleInteraction(iia);
                     }
                 }
-                else
+                else if (interactableObj is IToggleInteractable iti) // ToggleInteractable
+                {
+                    ToggleInteraction(iti);
+                }
+                else // Only Interactable
                 {
                     interactableObj.StartInteraction(gameObject);
                 }
             }
             else if (Input.GetKeyDown(actionKey))
             {
-                if (interactableObj is IInteractableAndActionable iia)
+                if (interactableObj is IInteractableAndActionable iia) // ToggleInteractable and Actionable
                 {
-                    if (iia.IsActioning())
-                    {
-                        iia.EndAction();
-                    }
-                    else if (iia.IsInteracting())
-                    {
-                        iia.StartAction();
-                    }
+                    ToggleAction(iia);
                 }
             }
+        }
+    }
+
+    void ToggleInteraction(IToggleInteractable iti)
+    {
+        if (iti.IsInteracting())
+        {
+            iti.EndInteraction();
+        }
+        else
+        {
+            iti.StartInteraction(gameObject);
+        }
+    }
+
+    void ToggleAction(IInteractableAndActionable iia)
+    {
+        if (iia.IsActioning())
+        {
+            iia.EndAction();
+        }
+        else if (iia.IsInteracting())
+        {
+            iia.StartAction();
         }
     }
 }
