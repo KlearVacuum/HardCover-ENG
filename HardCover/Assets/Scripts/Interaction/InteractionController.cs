@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// On Player
 public class InteractionController : MonoBehaviour
 {
     public IInteractable interactableObj;
@@ -23,13 +24,13 @@ public class InteractionController : MonoBehaviour
                         }
                         else
                         {
-                            iia.StartInteraction();
+                            iia.StartInteraction(gameObject);
                         }
                     }
                 }
                 else
                 {
-                    interactableObj.StartInteraction();
+                    interactableObj.StartInteraction(gameObject);
                 }
             }
             else if (Input.GetKeyDown(actionKey))

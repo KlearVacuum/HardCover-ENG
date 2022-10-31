@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 
-public class BookTrigger : MonoBehaviour, IInteractableAndActionable
+public class Book : MonoBehaviour, IInteractableAndActionable
 {
     private bool isInteracting, isActioning;
-
-    private GameObject inCollisionWith;
 
     //TODO: KEFF FILL IN WHAT A BOOK NEEDS
     private float mEnergyCost;
@@ -23,25 +21,7 @@ public class BookTrigger : MonoBehaviour, IInteractableAndActionable
         set => mKnowledgeValue = value;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            inCollisionWith = collision.gameObject;
-            collision.GetComponent<InteractionController>().interactableObj = this;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            inCollisionWith = null;
-            collision.GetComponent<InteractionController>().interactableObj = null;
-        }
-    }
-
-    public void StartInteraction()
+    public void StartInteraction(GameObject interactor)
     {
         // Pick Up Book
         isInteracting = true;

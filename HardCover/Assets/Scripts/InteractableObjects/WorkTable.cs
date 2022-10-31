@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 
-public class WorkTrigger : MonoBehaviour, IInteractableAndActionable
+public class WorkTable : MonoBehaviour, IInteractableAndActionable
 {
     private bool isInteracting, isActioning;
 
-    private GameObject inCollisionWith;
-
-    //TODO: KEFF FILL IN WHAT A BOOK NEEDS
+    //TODO: KEFF FILL IN WHAT A WORK NEEDS
     private float mEnergyCost;
 
     public float energyCost
@@ -23,25 +21,7 @@ public class WorkTrigger : MonoBehaviour, IInteractableAndActionable
         set => mCashValue = value;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            inCollisionWith = collision.gameObject;
-            collision.GetComponent<InteractionController>().interactableObj = this;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            inCollisionWith = null;
-            collision.GetComponent<InteractionController>().interactableObj = null;
-        }
-    }
-
-    public void StartInteraction()
+    public void StartInteraction(GameObject interactor)
     {
         // Sit at workbench
         isInteracting = true;

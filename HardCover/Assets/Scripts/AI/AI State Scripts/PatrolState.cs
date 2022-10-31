@@ -36,7 +36,7 @@ public class PatrolState : AIState
     {
         Debug.Log("start moving coroutine");
         Vector2 patrolPoint = stateManager.ai.activePatrol.patrolPoints[stateManager.ai.patrolIndex].position;
-        PortalTrigger closestStairs = null;
+        Portal closestStairs = null;
         if (Mathf.Abs(stateManager.transform.position.y - patrolPoint.y) > 1f)
         {
             stateManager.ai.climbStairs = true;

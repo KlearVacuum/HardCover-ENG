@@ -82,17 +82,17 @@ public class AIEntityController : MonoBehaviour
         if (rb.velocity.magnitude > maxSpeed) rb.velocity = moveVect * maxSpeed;
     }
 
-    public PortalTrigger GetClosestStairs(Vector2 pos, float radius)
+    public Portal GetClosestStairs(Vector2 pos, float radius)
     {
         Collider2D[] colArray = Physics2D.OverlapCircleAll(pos, radius);
         if (colArray.Length == 0) return null;
 
         float shortestLength = float.MaxValue;
-        PortalTrigger closestDoor = null;
+        Portal closestDoor = null;
         
         foreach (Collider2D col in colArray)
         {
-            PortalTrigger foundStairs = col.GetComponent<PortalTrigger>();
+            Portal foundStairs = col.GetComponent<Portal>();
             if (foundStairs != null)
             {
                 if (Mathf.Abs(transform.position.y - foundStairs.transform.position.y) < 0.5f)

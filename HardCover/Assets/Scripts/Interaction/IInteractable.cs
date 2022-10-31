@@ -1,6 +1,8 @@
-﻿public interface IInteractable
+﻿using UnityEngine;
+
+public interface IInteractable
 {
-    void StartInteraction();
+    void StartInteraction(GameObject interactor);
 }
 
 public interface IActionable
