@@ -15,8 +15,7 @@ public class InteractionTrigger : MonoBehaviour
         Assert.AreNotEqual(interactableObject, null, "No IInteractable Component on Object");
     }
 
-    // This is currently intentional due to not being able to control exit and enter call order
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
@@ -26,7 +25,7 @@ public class InteractionTrigger : MonoBehaviour
                 collidedInteractionController = collision.GetComponent<InteractionController>();
             }
 
-            collidedInteractionController.interactableObj = interactableObject;
+            collidedInteractionController.interactableObj.Add(interactableObject);
         }
     }
 
@@ -34,7 +33,7 @@ public class InteractionTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collidedInteractionController.interactableObj = null;
+            collidedInteractionController.interactableObj.Remove(interactableObject);
         }
     }
 }

@@ -1,38 +1,42 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 // On Player
 public class InteractionController : MonoBehaviour
 {
-    public IInteractable interactableObj;
+    public List<IInteractable> interactableObj = new List<IInteractable>();
 
     [SerializeField] private KeyCode interactKey = KeyCode.E;
     [SerializeField] private KeyCode actionKey = KeyCode.Space;
 
     void Update()
     {
-        if (interactableObj != null)
+        if (interactableObj.Count > 0)
         {
+            IInteractable top = interactableObj.Last();
+
             if (Input.GetKeyDown(interactKey))
             {
-                if (interactableObj is IInteractableAndActionable iia) // ToggleInteractable and Actionable
+                if (top is IInteractableAndActionable iia) // ToggleInteractable and Actionable
                 {
                     if (!iia.IsActioning())
                     {
                         ToggleInteraction(iia);
                     }
                 }
-                else if (interactableObj is IToggleInteractable iti) // ToggleInteractable
+                else if (top is IToggleInteractable iti) // ToggleInteractable
                 {
                     ToggleInteraction(iti);
                 }
                 else // Only Interactable
                 {
-                    interactableObj.StartInteraction(gameObject);
+                    top.StartInteraction(gameObject);
                 }
             }
             else if (Input.GetKeyDown(actionKey))
             {
-                if (interactableObj is IInteractableAndActionable iia) // ToggleInteractable and Actionable
+                if (top is IInteractableAndActionable iia) // ToggleInteractable and Actionable
                 {
                     ToggleAction(iia);
                 }
