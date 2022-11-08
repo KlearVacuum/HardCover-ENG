@@ -503,6 +503,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &113849751 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1456937338692004818, guid: 94c4cc49004946c4ba56442a72d2ed79, type: 3}
+  m_PrefabInstance: {fileID: 825414014}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2bf707ec0bee940af659149ddf1e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &211628825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,6 +1419,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1456937338692004818, guid: 94c4cc49004946c4ba56442a72d2ed79, type: 3}
+      propertyPath: destination
+      value: 
+      objectReference: {fileID: 1563722585}
     - target: {fileID: 6729321993181130822, guid: 94c4cc49004946c4ba56442a72d2ed79, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -2021,6 +2036,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1559781780}
   m_CullTransparentMesh: 1
+--- !u!114 &1563722585 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1456937338692004818, guid: 94c4cc49004946c4ba56442a72d2ed79, type: 3}
+  m_PrefabInstance: {fileID: 7604155569993170405}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2bf707ec0bee940af659149ddf1e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1679485023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,6 +2594,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1456937338692004818, guid: 94c4cc49004946c4ba56442a72d2ed79, type: 3}
+      propertyPath: destination
+      value: 
+      objectReference: {fileID: 113849751}
     - target: {fileID: 6729321993181130822, guid: 94c4cc49004946c4ba56442a72d2ed79, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
