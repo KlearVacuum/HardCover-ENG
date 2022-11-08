@@ -55,4 +55,8 @@ public class WorkTable : MonoBehaviour, IInteractableAndActionable
     {
         return false;
     }
+    public InteractionPriority GetPriority()
+    {
+        return InteractionPriority.Default;
+    }
 }

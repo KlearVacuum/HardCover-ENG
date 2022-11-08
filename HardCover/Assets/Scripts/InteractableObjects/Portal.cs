@@ -17,4 +17,8 @@ public class Portal : MonoBehaviour, IInteractable
     {
         Teleport(interactor);
     }
+    public InteractionPriority GetPriority()
+    {
+        return InteractionPriority.Medium;
+    }
 }

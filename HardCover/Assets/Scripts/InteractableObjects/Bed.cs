@@ -69,4 +69,9 @@ public class Bed : MonoBehaviour, IInteractableAndActionable
     {
         return isActioning;
     }
+
+    public InteractionPriority GetPriority()
+    {
+        return InteractionPriority.Default;
+    }
 }

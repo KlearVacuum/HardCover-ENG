@@ -136,4 +136,8 @@ public class Book : MonoBehaviour, IInteractableAndActionable
     {
         return isActioning;
     }
+    public InteractionPriority GetPriority()
+    {
+        return InteractionPriority.Low;
+    }
 }

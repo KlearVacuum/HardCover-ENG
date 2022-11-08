@@ -20,4 +20,8 @@ public class NpcChat : MonoBehaviour, IInteractable
     {
         return npcName;
     }
+    public InteractionPriority GetPriority()
+    {
+        return InteractionPriority.Default;
+    }
 }

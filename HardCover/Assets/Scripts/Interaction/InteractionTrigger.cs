@@ -25,7 +25,7 @@ public class InteractionTrigger : MonoBehaviour
                 collidedInteractionController = collision.GetComponent<InteractionController>();
             }
 
-            collidedInteractionController.interactableObj.Add(interactableObject);
+            collidedInteractionController.AddInteractable(interactableObject);
         }
     }
 
@@ -33,7 +33,7 @@ public class InteractionTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collidedInteractionController.interactableObj.Remove(interactableObject);
+            collidedInteractionController.RemoveInteractable(interactableObject);
         }
     }
 }

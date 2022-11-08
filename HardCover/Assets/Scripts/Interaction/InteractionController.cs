@@ -5,7 +5,7 @@ using UnityEngine;
 // On Player
 public class InteractionController : MonoBehaviour
 {
-    public List<IInteractable> interactableObj = new List<IInteractable>();
+    private List<IInteractable> interactableObj = new List<IInteractable>();
 
     [SerializeField] private KeyCode interactKey = KeyCode.E;
     [SerializeField] private KeyCode actionKey = KeyCode.Space;
@@ -66,5 +66,17 @@ public class InteractionController : MonoBehaviour
         {
             iia.StartAction();
         }
+    }
+
+    public void AddInteractable(IInteractable ii)
+    {
+        interactableObj.Add(ii);
+        interactableObj = interactableObj.OrderBy(interactable => interactable.GetPriority()).ToList();
+    }
+
+    public void RemoveInteractable(IInteractable ii)
+    {
+        interactableObj.Remove(ii);
+        interactableObj = interactableObj.OrderBy(interactable => interactable.GetPriority()).ToList();
     }
 }
