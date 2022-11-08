@@ -2,24 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
+    public GameObject playerProgressBarRoot;
+    public Image progressBar;
+
     public TextMeshProUGUI knowledgeUI, energyUI, cashUI;
+
     private float m_Knowledge;
+
     public float knowledge
     {
-        get => m_Knowledge; set { m_Knowledge = Mathf.Clamp(value, 0, 100); UpdateKnowledgeUI(m_Knowledge); }
+        get => m_Knowledge;
+        set
+        {
+            m_Knowledge = Mathf.Clamp(value, 0, 100);
+            UpdateKnowledgeUI(m_Knowledge);
+        }
     }
+
     private float m_Energy;
+
     public float energy
     {
-        get => m_Energy; set { m_Energy = Mathf.Clamp(value, 0, 100); UpdateEnergyUI(m_Energy); }
+        get => m_Energy;
+        set
+        {
+            m_Energy = Mathf.Clamp(value, 0, 100);
+            UpdateEnergyUI(m_Energy);
+        }
     }
+
     private int m_Cash;
+
     public int cash
     {
-        get => m_Cash; set { m_Cash = Mathf.Max(value, 0); UpdateCashUI(m_Cash); }
+        get => m_Cash;
+        set
+        {
+            m_Cash = Mathf.Max(value, 0);
+            UpdateCashUI(m_Cash);
+        }
     }
 
     private void Start()
@@ -51,13 +76,42 @@ public class PlayerStats : MonoBehaviour
         double value = amount;
         knowledgeUI.text = value + "% Knowledge Progress";
     }
+
     void UpdateEnergyUI(float amount)
     {
         double value = amount;
         energyUI.text = value + "% Energy Remaining";
     }
+
     void UpdateCashUI(int amount)
     {
         cashUI.text = "$" + amount;
+    }
+
+    public void ShowActionBar()
+    {
+        playerProgressBarRoot.SetActive(true);
+    }
+
+    public void HideActionBar()
+    {
+        playerProgressBarRoot.SetActive(false);
+    }
+
+    public void SetProgress(float val)
+    {
+        Mathf.Clamp01(val);
+        progressBar.fillAmount = val;
+    }
+
+    public bool TryPurchase(int cost)
+    {
+        if (cash >= cost)
+        {
+            cash -= cost;
+            return true;
+        }
+
+        return false;
     }
 }

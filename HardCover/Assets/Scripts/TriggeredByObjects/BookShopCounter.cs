@@ -24,13 +24,9 @@ public class BookShopCounter : MonoBehaviour, IShowUiPopUp
         mBook.transform.position = bookLocationOnCounter.position;
 
         // Purchase Book
-        // TODO: FIX HARDCODE
         if (mBook.ownerName != "Amanda")
         {
-            // TODO: ACCESS PLAYER STUFF
-
-            // TODO: Try to purchase
-            if (true)
+            if (Input.GetKeyDown(KeyCode.Space) && GlobalGameData.playerStats.TryPurchase(mBook.bookCost))
             {
                 mBook.ownerName = "Amanda";
             }
@@ -57,11 +53,13 @@ public class BookShopCounter : MonoBehaviour, IShowUiPopUp
         {
             case "Book":
             {
+                Debug.Log("Book touch Counter");
                 mBook = collision.GetComponent<Book>();
                 break;
             }
             case "Player":
             {
+                Debug.Log("Player touch Counter");
                 mPlayer = collision.gameObject;
                 break;
             }

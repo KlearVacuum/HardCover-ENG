@@ -2,14 +2,14 @@
 
 public class Portal : MonoBehaviour, IInteractable
 {
-    public Transform destination;
+    public Portal destination;
 
     public void Teleport(GameObject go)
     {
         if (GlobalGameData.portalCooldown <= 0 && go != null)
         {
             GlobalGameData.portalCooldown = 0.5f;
-            go.transform.position = destination.position;
+            go.transform.position = destination.transform.position;
         }
     }
 
