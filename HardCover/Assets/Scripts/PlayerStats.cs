@@ -11,39 +11,39 @@ public class PlayerStats : MonoBehaviour
 
     public TextMeshProUGUI knowledgeUI, energyUI, cashUI;
 
-    private float m_Knowledge;
+    private int mKnowledge;
 
-    public float knowledge
+    public int knowledge
     {
-        get => m_Knowledge;
+        get => mKnowledge;
         set
         {
-            m_Knowledge = Mathf.Clamp(value, 0, 100);
-            UpdateKnowledgeUI(m_Knowledge);
+            mKnowledge = Mathf.Clamp(value, 0, 100);
+            UpdateKnowledgeUi(mKnowledge);
         }
     }
 
-    private float m_Energy;
+    private int mEnergy;
 
-    public float energy
+    public int energy
     {
-        get => m_Energy;
+        get => mEnergy;
         set
         {
-            m_Energy = Mathf.Clamp(value, 0, 100);
-            UpdateEnergyUI(m_Energy);
+            mEnergy = Mathf.Clamp(value, 0, 100);
+            UpdateEnergyUi(mEnergy);
         }
     }
 
-    private int m_Cash;
+    private int mCash;
 
     public int cash
     {
-        get => m_Cash;
+        get => mCash;
         set
         {
-            m_Cash = Mathf.Max(value, 0);
-            UpdateCashUI(m_Cash);
+            mCash = Mathf.Max(value, 0);
+            UpdateCashUi(mCash);
         }
     }
 
@@ -71,19 +71,19 @@ public class PlayerStats : MonoBehaviour
         //}
     }
 
-    void UpdateKnowledgeUI(float amount)
+    void UpdateKnowledgeUi(int amount)
     {
         double value = amount;
         knowledgeUI.text = value + "% Knowledge Progress";
     }
 
-    void UpdateEnergyUI(float amount)
+    void UpdateEnergyUi(int amount)
     {
         double value = amount;
         energyUI.text = value + "% Energy Remaining";
     }
 
-    void UpdateCashUI(int amount)
+    void UpdateCashUi(int amount)
     {
         cashUI.text = "$" + amount;
     }
@@ -113,5 +113,20 @@ public class PlayerStats : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void TriggerPenalty()
+    {
+        mCash -= 8;
+        int time = GlobalGameData.timeManager.GetTime();
+
+        if (time > 18 || time < 5) // Time skip to 5am
+        {
+            GlobalGameData.timeManager.AddTimeUntil(5);
+        }
+        else // Time skip to 6pm
+        {
+            GlobalGameData.timeManager.AddTimeUntil(18);
+        }
     }
 }

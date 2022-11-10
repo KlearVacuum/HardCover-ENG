@@ -24,11 +24,11 @@ public class BookShopCounter : MonoBehaviour, IShowUiPopUp
         mBook.transform.position = bookLocationOnCounter.position;
 
         // Purchase Book
-        if (mBook.ownerName != "Amanda")
+        if (mBook.BookOwner != "Amanda")
         {
-            if (Input.GetKeyDown(KeyCode.Space) && GlobalGameData.playerStats.TryPurchase(mBook.bookCost))
+            if (Input.GetKeyDown(KeyCode.Space) && GlobalGameData.playerStats.TryPurchase(mBook.BookCost))
             {
-                mBook.ownerName = "Amanda";
+                mBook.BookOwner = "Amanda";
             }
         }
     }

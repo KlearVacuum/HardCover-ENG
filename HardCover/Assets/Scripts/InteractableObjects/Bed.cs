@@ -2,12 +2,45 @@
 
 public class Bed : MonoBehaviour, IInteractableAndActionable
 {
-    private void ShowUi()
-    {
-    }
+    public int EnergyRecoveryPerHour = 5;
+    public int WakeUpTime = 5; // 5am Wakeup time
+    public int OverSleepTime = 3;
 
-    private void HideUi()
+    public int GetTimeToSleepUntil()
     {
+        int timeToSleepUntil;
+
+        int time = GlobalGameData.timeManager.GetTime();
+
+        int startingEnergy = GlobalGameData.playerStats.energy;
+        int missingEnergy = 100 - startingEnergy;
+        int hoursRequired = missingEnergy == 0 ? 0 : missingEnergy / EnergyRecoveryPerHour + 1;
+
+        int tillWakeUpTime = GlobalGameData.timeManager.HoursLeftTill(WakeUpTime);
+        int difference = hoursRequired - tillWakeUpTime;
+
+        if (difference >= 0) // Need to sleep more then you have time for or Just nice
+        {
+            // Just sleep till wake up time
+            timeToSleepUntil = WakeUpTime;
+        }
+        else // Have more than enough time to sleep
+        {
+            hoursRequired += OverSleepTime; // OVERSLEEP SYNDROME
+
+            if (hoursRequired > tillWakeUpTime)
+            {
+                // Just sleep till wake up time
+                timeToSleepUntil = tillWakeUpTime;
+            }
+            else
+            {
+                // Sleep till necessary
+                timeToSleepUntil = time + hoursRequired;
+            }
+        }
+
+        return timeToSleepUntil;
     }
 
     // ========================================================
@@ -30,34 +63,33 @@ public class Bed : MonoBehaviour, IInteractableAndActionable
     // ========================================================
     // IInteractableAndActionable
     // ========================================================
-    private bool isInteracting, isActioning;
+    private bool isInteracting;
 
     public void StartInteraction(GameObject interactor)
     {
-        // Pick Up Book
         isInteracting = true;
         Debug.Log("Enter Bed");
     }
 
     public void EndInteraction()
     {
-        // Drop Book
         isInteracting = false;
         Debug.Log("Exit Bed");
     }
 
     public void StartAction()
     {
-        // Start Reading
-        isActioning = true;
         Debug.Log("Start Sleeping");
+
+        int timeToSleepUntil = GetTimeToSleepUntil();
+
+        int hoursSlept = GlobalGameData.timeManager.AddTimeUntil(timeToSleepUntil);
+        GlobalGameData.playerStats.energy += hoursSlept * EnergyRecoveryPerHour;
     }
 
     public void EndAction()
     {
-        // Stop Reading
-        isActioning = false;
-        Debug.Log("Stop Sleeping");
+        //Blank
     }
 
     public bool IsInteracting()
@@ -67,7 +99,7 @@ public class Bed : MonoBehaviour, IInteractableAndActionable
 
     public bool IsActioning()
     {
-        return isActioning;
+        return false;
     }
 
     public InteractionPriority GetPriority()

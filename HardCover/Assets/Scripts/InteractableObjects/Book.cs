@@ -1,36 +1,24 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Book : MonoBehaviour, IInteractableAndActionable
 {
     public float yOffSet = 0.5f;
-    public float knowledgeConsumptionRate = 10.0f;
 
-    // This is how much knowledge left the player can gain from the book
-    private const float kStartingKnowledge = 100.0f;
-    private float mKnowledgeValue = kStartingKnowledge;
+    public int KnowledgeToPlayer = 25;
 
-    public float knowledgeValue
-    {
-        get => mKnowledgeValue;
-        set => mKnowledgeValue = value;
-    }
+    public int ProgressionPerHour = 10;
+    public int EnergyConsumptionRatePerHour = 2;
+    public int BookCost = 30;
+
+    public float SecondsPerHour = 2.0f; // Amount of seconds IRL convert to in game hours
 
     // This is the name of owner
-    [SerializeField] private string mOwnerName;
+    public string BookOwner = "Amanda";
 
-    public string ownerName
-    {
-        get => mOwnerName;
-        set => mOwnerName = value;
-    }
+    private const int kStartingKnowledge = 100;
+    private int mRemainingKnowledge = kStartingKnowledge;
 
-    [SerializeField] private int mBookCost = 50;
-    public int bookCost
-    {
-        get => mBookCost;
-        set => mBookCost = value;
-    }
+    private float timePassedSinceAction;
 
     private Vector3 mDefaultPosition;
     private SpriteRenderer mSpriteRenderer;
@@ -50,18 +38,25 @@ public class Book : MonoBehaviour, IInteractableAndActionable
 
         if (isActioning)
         {
-            if (mKnowledgeValue > 0.0f)
+            if (mRemainingKnowledge > 0)
             {
-                mKnowledgeValue -= knowledgeConsumptionRate * Time.deltaTime;
-                GlobalGameData.playerStats.SetProgress(1.0f - mKnowledgeValue / kStartingKnowledge);
+                while (timePassedSinceAction > SecondsPerHour)
+                {
+                    mRemainingKnowledge -= ProgressionPerHour;
+                    timePassedSinceAction -= SecondsPerHour;
+                    GlobalGameData.playerStats.energy -= EnergyConsumptionRatePerHour;
+                    GlobalGameData.timeManager.AddTime();
+                }
             }
-            else // Book reading done
+            else
             {
                 actionOver = true;
-                mKnowledgeValue = 0.0f;
-
+                GlobalGameData.playerStats.knowledge += KnowledgeToPlayer;
                 EndAction();
             }
+
+            GlobalGameData.playerStats.SetProgress(1.0f - (float)mRemainingKnowledge / (float)kStartingKnowledge);
+            timePassedSinceAction += Time.deltaTime;
         }
     }
 
@@ -113,6 +108,7 @@ public class Book : MonoBehaviour, IInteractableAndActionable
 
         // Start Reading
         isActioning = true;
+        timePassedSinceAction = 0;
         Debug.Log("Start Reading");
 
         GlobalGameData.playerStats.ShowActionBar();
@@ -136,6 +132,7 @@ public class Book : MonoBehaviour, IInteractableAndActionable
     {
         return isActioning;
     }
+
     public InteractionPriority GetPriority()
     {
         return InteractionPriority.Low;
