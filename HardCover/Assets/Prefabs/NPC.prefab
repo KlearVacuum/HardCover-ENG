@@ -67,6 +67,7 @@ MonoBehaviour:
     minMaxAvailableDay: {x: 0, y: 0}
     minMaxAvailableHour: {x: 0, y: 0}
     waitTime: 0
+  viewRange: 0
   relativePos: {x: 0, y: 0, z: 0}
   actionDuration: 0
   moveToTarget: {fileID: 0}
@@ -87,6 +88,7 @@ MonoBehaviour:
   allAIStates:
   - {fileID: 11400000, guid: 991e288f954a34846ba539b14239ad34, type: 2}
   - {fileID: 11400000, guid: b5887297b9482f449a514dc0d6193ed9, type: 2}
+  - {fileID: 11400000, guid: 1c6a26ce952301449b29d4b22a039028, type: 2}
   printStates: 1
 --- !u!50 &5933897288617493676
 Rigidbody2D:

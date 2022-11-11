@@ -265,6 +265,11 @@ public class AIEntityController : MonoBehaviour
         flipped = !flipped;
     }
 
+    public bool PlayerHasBook()
+    {
+        return false;
+    }
+
     public bool PlayerInSight()
     {
         // return false if ai is currently walking in stairs
