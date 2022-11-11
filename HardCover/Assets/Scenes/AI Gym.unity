@@ -2299,7 +2299,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933897288617493678, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
       propertyPath: allPatrolData.Array.data[0].waitTime
-      value: 0.5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933897288617493678, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+      propertyPath: allPatrolData.Array.data[0].minMaxAvailableDay.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933897288617493678, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+      propertyPath: allPatrolData.Array.data[0].minMaxAvailableHour.y
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 5933897288617493678, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
       propertyPath: allPatrolData.Array.data[0].patrolPoints.Array.size

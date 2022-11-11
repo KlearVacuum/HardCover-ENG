@@ -8,10 +8,16 @@ public static class GlobalGameData
     public static DayNightCycleManager timeManager;
     public static float portalCooldown;
 
+    public static int currentDay;
+    public static float currentTime;
+
     public static void Reset()
     {
         playerStats = null;
         timeManager = null;
         portalCooldown = 0;
+
+        currentDay = 1;
+        currentTime = 0;
     }
 }
