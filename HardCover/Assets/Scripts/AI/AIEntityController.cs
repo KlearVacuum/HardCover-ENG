@@ -22,6 +22,15 @@ public class AIEntityController : MonoBehaviour
     [HideInInspector] public int patrolIndex;
     [HideInInspector] public PatrolData activePatrol;
 
+    [Header("Vision Info")]
+    public float viewRange;
+
+    bool flipped;
+    float startingScale;
+    Vector2 currentFacingDir;
+    float flipXTime = 0.1f;
+    float facingDirTime;
+
     private Vector2 movementInput;
 
     [HideInInspector]
@@ -49,7 +58,9 @@ public class AIEntityController : MonoBehaviour
 
     void Start()
     {
-
+        currentFacingDir = Vector2.right;
+        flipped = false;
+        startingScale = transform.localScale.x;
     }
 
     void Update()
@@ -69,13 +80,17 @@ public class AIEntityController : MonoBehaviour
     {
         if (movementInput == Vector2.zero)
         {
+            animator.SetBool("isMoving", false);
             rb.velocity *= 1 - Time.fixedDeltaTime;
             return;
         }
+        animator.SetBool("isMoving", true);
         Vector2 moveVect = movementInput - (Vector2)transform.position;
         Debug.DrawLine(transform.position, (Vector2)transform.position + moveVect, Color.red);
         moveVect.y = 0;
         moveVect.Normalize();
+
+        SetDirection(moveVect);
 
         Debug.DrawLine(transform.position, (Vector2)transform.position + moveVect, Color.green);
         rb.AddForce(moveVect * Time.fixedDeltaTime * moveForce * rb.mass);
@@ -111,10 +126,12 @@ public class AIEntityController : MonoBehaviour
 
     public PatrolData PatrolAvailable()
     {
+        if (allPatrolData == null || allPatrolData.Count == 0) return null;
         foreach (PatrolData patrolData in allPatrolData)
         {
-            if (patrolData.PatrolAvailable(1)) // replace 0 with current in-game time
+            if (patrolData.PatrolAvailable(GlobalGameData.currentDay, GlobalGameData.currentTime)) // replace 0 with current in-game time
             {
+                if (patrolData.patrolPoints.Count == 0) Debug.LogError("Patrol Data has no patrol points!");
                 return patrolData;
             }
         }
@@ -191,10 +208,93 @@ public class AIEntityController : MonoBehaviour
     {
         moveForce = _speed;
     }
+    public void SetDirection(Vector3 direction)
+    {
+        Vector2 newDir = direction;
+        newDir.y = 0;
+        newDir.Normalize();
+        if (Vector2.Dot(newDir, currentFacingDir) < 0f)
+        {
+            // moving opposite way
+            facingDirTime -= Time.deltaTime;
+
+            if (facingDirTime < 0)
+            {
+                StartCoroutine(FlipXCoroutine(flipXTime));
+                currentFacingDir = newDir;
+                facingDirTime = flipXTime;
+            }
+        }
+        else
+        {
+            facingDirTime = flipXTime;
+        }
+    }
 
     public Vector3 GenerateRelativePos(float distance)
     {
         Vector3 dir = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)).normalized;
         return dir * distance;
+    }
+    IEnumerator FlipXCoroutine(float seconds)
+    {
+        float totalTime = seconds;
+        float t = 0;
+        float startScale = 1;
+        float endScale = 1;
+        if (flipped)
+        {
+            startScale = -startingScale;
+            endScale = startingScale;
+        }
+        else
+        {
+            startScale = startingScale;
+            endScale = -startingScale;
+        }
+        while (t < totalTime)
+        {
+            float lerp = Mathf.Lerp(startScale, endScale, t / totalTime);
+            if (lerp <= 0.001f && lerp >= -0.001f) lerp = 0.001f;
+            transform.localScale = new Vector3(lerp, transform.localScale.y, transform.localScale.z);
+            t += Time.deltaTime;
+            if (t > totalTime) t = totalTime;
+            yield return null;
+        }
+        transform.localScale = new Vector3(endScale, transform.localScale.y, transform.localScale.z);
+        flipped = !flipped;
+    }
+
+    public bool PlayerInSight()
+    {
+        // return false if ai is currently walking in stairs
+
+        // player is not on the same level
+        Vector2 diff = transform.position - GlobalGameData.playerStats.transform.position;
+        if (Mathf.Abs(diff.y) > 1f) return false;
+        return diff.magnitude < viewRange;
+    }
+
+
+    public IEnumerator CatchPlayerCoroutine()
+    {
+        // start dialogue about catching player
+        Debug.Log("caught player with book!");
+        yield return new WaitForSeconds(1f);
+        // player pays the bribe
+        Debug.Log("player pays a fine");
+        yield return new WaitForSeconds(1f);
+        // screen fades to black
+        Debug.Log("screen fades to black");
+        yield return new WaitForSeconds(1f);
+        // time skip
+        Debug.Log("time skip");
+        yield return new WaitForSeconds(1f);
+        // screen fades back to normal
+        Debug.Log("screen is fading back");
+        yield return new WaitForSeconds(1f);
+        // game resumes
+        Debug.Log("resume game");
+
     }
 }

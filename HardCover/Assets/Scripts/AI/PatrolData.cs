@@ -6,19 +6,19 @@ using UnityEngine;
 public class PatrolData
 {
     public List<Transform> patrolPoints;
-    public List<Vector2> minMaxAvailableTimes;
+    public Vector2 minMaxAvailableDay;
+    public Vector2 minMaxAvailableHour;
     public float waitTime;
 
-    public bool PatrolAvailable(float time)
+    public bool PatrolAvailable(int day, float hour)
     {
-        foreach (Vector2 timeSlot in minMaxAvailableTimes)
-        {
-            if (time > timeSlot.x && time < timeSlot.y)
-            {
-                return true;
-            }
-        }
-        return false;
+        // check day
+        bool dayAvailable = day >= (int)minMaxAvailableDay.x && day <= (int)minMaxAvailableDay.y;
+
+        // check hour
+        bool hourAvailable = hour >= minMaxAvailableHour.x && hour <= minMaxAvailableHour.y;
+
+        return dayAvailable && hourAvailable;
     }
 
     public void NextIndex(ref int index)
