@@ -2,8 +2,6 @@
 
 public class Book : MonoBehaviour, IInteractableAndActionable
 {
-    public float yOffSet = 0.5f;
-
     public int KnowledgeToPlayer = 25;
 
     public int ProgressionPerHour = 10;
@@ -25,7 +23,7 @@ public class Book : MonoBehaviour, IInteractableAndActionable
 
     private void Awake()
     {
-        mDefaultPosition = transform.position;
+        mDefaultPosition = transform.parent.position;
         mSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -33,7 +31,7 @@ public class Book : MonoBehaviour, IInteractableAndActionable
     {
         if (theInteractor != null)
         {
-            transform.position = theInteractor.transform.position + new Vector3(0, yOffSet, 0);
+            SetPosition(theInteractor.transform.position);
         }
 
         if (isActioning)
@@ -44,7 +42,9 @@ public class Book : MonoBehaviour, IInteractableAndActionable
                 {
                     mRemainingKnowledge -= ProgressionPerHour;
                     timePassedSinceAction -= SecondsPerHour;
-                    GlobalGameData.playerStats.AdjustEnergy(-EnergyConsumptionRatePerHour);
+
+                    // Don't pop for the last tick, just show knowledge gain
+                    GlobalGameData.playerStats.AdjustEnergy(-EnergyConsumptionRatePerHour, mRemainingKnowledge > 0);
                     GlobalGameData.timeManager.AddTime();
                 }
             }
@@ -62,13 +62,18 @@ public class Book : MonoBehaviour, IInteractableAndActionable
 
     public void ResetPosition()
     {
-        transform.position = mDefaultPosition;
+        SetPosition(mDefaultPosition);
     }
 
     public void PlayerGotCaught()
     {
         EndInteraction();
         ResetPosition();
+    }
+
+    public void SetPosition(Vector3 pos)
+    {
+        transform.parent.position = pos;
     }
 
     // ========================================================
@@ -83,11 +88,13 @@ public class Book : MonoBehaviour, IInteractableAndActionable
 
     public void StartInteraction(GameObject interactor)
     {
-        // Pick Up Book
-        theInteractor = interactor;
-        mSpriteRenderer.sortingLayerName = "InteractableInfrontPlayer";
-
-        Debug.Log("Pick up Book");
+        // Can only pick up if she wasn't already holding a book
+        if (interactor.GetComponent<InteractionController>().GetBook() == null)
+        {
+            // Pick Up Book
+            theInteractor = interactor;
+            mSpriteRenderer.sortingLayerName = "InteractableInfrontPlayer";
+        }
     }
 
     public void EndInteraction()
@@ -95,8 +102,6 @@ public class Book : MonoBehaviour, IInteractableAndActionable
         // Drop Book
         theInteractor = null;
         mSpriteRenderer.sortingLayerName = "InteractableInfrontBackground";
-
-        Debug.Log("Drop Book");
     }
 
     public void StartAction()
@@ -109,8 +114,8 @@ public class Book : MonoBehaviour, IInteractableAndActionable
         // Start Reading
         isActioning = true;
         timePassedSinceAction = 0;
-        Debug.Log("Start Reading");
 
+        GlobalGameData.playerController.DisableMovement();
         GlobalGameData.playerStats.ShowActionBar();
     }
 
@@ -118,8 +123,8 @@ public class Book : MonoBehaviour, IInteractableAndActionable
     {
         // Stop Reading
         isActioning = false;
-        Debug.Log("Stop Reading");
 
+        GlobalGameData.playerController.EnableMovement();
         GlobalGameData.playerStats.HideActionBar();
     }
 
@@ -135,6 +140,11 @@ public class Book : MonoBehaviour, IInteractableAndActionable
 
     public InteractionPriority GetPriority()
     {
-        return InteractionPriority.Low;
+        return InteractionPriority.Book;
+    }
+
+    public GameObject GetObject()
+    {
+        return gameObject;
     }
 }

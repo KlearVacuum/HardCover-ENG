@@ -123,7 +123,7 @@ public class AIStateManager : MonoBehaviour
 
     public void PrintStateEvaluation()
     {
-        Debug.Log(stateResults);
+        // Debug.Log(stateResults);
     }
 
     public void ForceTransition()

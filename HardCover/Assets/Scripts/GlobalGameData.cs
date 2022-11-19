@@ -2,6 +2,7 @@ using UnityEngine;
 
 public static class GlobalGameData
 {
+    public static PlayerController playerController;
     public static PlayerStats playerStats;
     public static DayNightCycleManager timeManager;
     public static float portalCooldown;
@@ -13,6 +14,7 @@ public static class GlobalGameData
     {
         playerStats = null;
         timeManager = null;
+        playerController = null;
         portalCooldown = 0;
 
         currentDay = 1;
@@ -21,8 +23,12 @@ public static class GlobalGameData
 
     public static void PopInPopOutValue(Vector3 location, string text, Color col)
     {
-        GameObject.Instantiate(playerStats.PopInPopOutObject,
+        GameObject go = GameObject.Instantiate(playerStats.PopInPopOutObject,
             location - ValuePopInPopOut.sDown,
-            Quaternion.identity).GetComponent<ValuePopInPopOut>().SetText(text);
+            Quaternion.identity);
+
+        ValuePopInPopOut vpip = go.GetComponent<ValuePopInPopOut>();
+        vpip.SetText(text);
+        vpip.SetColor(col);
     }
 }

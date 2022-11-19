@@ -11,8 +11,14 @@ public class University : MonoBehaviour, IInteractable
             Debug.Log("Game Ends");
         }
     }
+
     public InteractionPriority GetPriority()
     {
         return InteractionPriority.Default;
+    }
+
+    public GameObject GetObject()
+    {
+        return gameObject;
     }
 }

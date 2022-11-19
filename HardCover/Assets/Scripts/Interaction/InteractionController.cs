@@ -76,7 +76,26 @@ public class InteractionController : MonoBehaviour
 
     public void RemoveInteractable(IInteractable ii)
     {
-        interactableObj.Remove(ii);
+        while (interactableObj.Remove(ii))
+        {
+        }
+
         interactableObj = interactableObj.OrderBy(interactable => interactable.GetPriority()).ToList();
+    }
+
+    public IInteractable GetBook()
+    {
+        foreach (IInteractable io in interactableObj)
+        {
+            if (io.GetPriority() == InteractionPriority.Book)
+            {
+                if (io is IToggleInteractable iti && iti.IsInteracting())
+                {
+                    return io;
+                }
+            }
+        }
+
+        return null;
     }
 }

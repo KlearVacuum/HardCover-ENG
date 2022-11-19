@@ -26,5 +26,6 @@ public class Chatbox : MonoBehaviour
     public void StopChat()
     {
         backGround.gameObject.SetActive(false);
+        GlobalGameData.playerController.EnableMovement();
     }
 }

@@ -267,7 +267,7 @@ public class AIEntityController : MonoBehaviour
 
     public bool PlayerHasBook()
     {
-        return false;
+        return GlobalGameData.playerStats.gameObject.GetComponent<InteractionController>().GetBook() != null;
     }
 
     public bool PlayerInSight()

@@ -13,6 +13,7 @@ public class NpcChat : MonoBehaviour, IInteractable
         if (true)
         {
             chatObject.StartChat(this);
+            GlobalGameData.playerController.DisableMovement();
         }
     }
 
@@ -20,8 +21,14 @@ public class NpcChat : MonoBehaviour, IInteractable
     {
         return npcName;
     }
+
     public InteractionPriority GetPriority()
     {
-        return InteractionPriority.Default;
+        return InteractionPriority.High;
+    }
+
+    public GameObject GetObject()
+    {
+        return gameObject;
     }
 }

@@ -27,9 +27,9 @@ public class PlayerStats : MonoBehaviour
 
     public TextMeshProUGUI knowledgeUI, energyUI, cashUI;
 
-    private int mKnowledge;
-    private int mEnergy;
-    private int mCash;
+    private int mKnowledge = 0;
+    private int mEnergy = 0;
+    private int mCash = 0;
 
     //Getters
     public int knowledge => mKnowledge;
@@ -39,9 +39,10 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         GlobalGameData.playerStats = this;
-        mKnowledge = 0;
-        mEnergy = 100;
-        mCash = 150;
+
+        AdjustKnowledge(0, false);
+        AdjustEnergy(100, false);
+        AdjustCash(150, false);
     }
 
     private void Update()
@@ -60,29 +61,39 @@ public class PlayerStats : MonoBehaviour
         //}
     }
 
-    public void AdjustKnowledge(int value)
+    public void AdjustKnowledge(int value, bool pop = true)
     {
         int initKnowledge = mKnowledge;
         mKnowledge = Mathf.Clamp(mKnowledge + value, 0, 100);
         value = mKnowledge - initKnowledge;
+        knowledgeUI.text = $"{mKnowledge::2D}%";
+
+        if (!pop)
+        {
+            return;
+        }
 
         if (value >= 0)
         {
             GlobalGameData.PopInPopOutValue(transform.position, $"+{value}%", StatAdjustColors.KnowledgeIncrease);
         }
-        else 
+        else
         {
-            GlobalGameData.PopInPopOutValue(transform.position, $"-{value}%", StatAdjustColors.KnowledgeDecrease);
+            GlobalGameData.PopInPopOutValue(transform.position, $"{value}%", StatAdjustColors.KnowledgeDecrease);
         }
-
-        knowledgeUI.text = mKnowledge + "% Knowledge Progress";
     }
 
-    public void AdjustEnergy(int value)
+    public void AdjustEnergy(int value, bool pop = true)
     {
         int initEnergy = mEnergy;
         mEnergy = Mathf.Clamp(mEnergy + value, 0, 100);
         value = mEnergy - initEnergy;
+        energyUI.text = $"{mEnergy::2D}%";
+
+        if (!pop)
+        {
+            return;
+        }
 
         if (value >= 0)
         {
@@ -90,17 +101,21 @@ public class PlayerStats : MonoBehaviour
         }
         else
         {
-            GlobalGameData.PopInPopOutValue(transform.position, $"-{value}E", StatAdjustColors.EnergyDecrease);
+            GlobalGameData.PopInPopOutValue(transform.position, $"{value}E", StatAdjustColors.EnergyDecrease);
         }
-
-        energyUI.text = mEnergy + "% Energy Remaining";
     }
 
-    public void AdjustCash(int value)
+    public void AdjustCash(int value, bool pop = true)
     {
         int initCash = mCash;
         mCash = Mathf.Max(mCash + value, 0);
         value = mCash - initCash;
+        cashUI.text = $"{mCash::3D}";
+
+        if (!pop)
+        {
+            return;
+        }
 
         if (value >= 0)
         {
@@ -108,10 +123,9 @@ public class PlayerStats : MonoBehaviour
         }
         else
         {
+            value *= -1;
             GlobalGameData.PopInPopOutValue(transform.position, $"-${value}", StatAdjustColors.CashDecrease);
         }
-
-        cashUI.text = "$" + mCash;
     }
 
     public void ShowActionBar()

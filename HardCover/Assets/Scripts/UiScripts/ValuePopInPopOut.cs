@@ -60,4 +60,9 @@ public class ValuePopInPopOut : MonoBehaviour
     {
         ValueText.SetText(t);
     }
+
+    public void SetColor(Color c)
+    {
+        ValueText.color = c;
+    }
 }

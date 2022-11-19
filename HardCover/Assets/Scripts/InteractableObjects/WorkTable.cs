@@ -16,24 +16,30 @@ public class WorkTable : MonoBehaviour, IInteractableAndActionable
     {
         // Sit at workbench
         isInteracting = true;
-        Debug.Log("Sit at workbench");
+        GlobalGameData.playerController.DisableMovement();
     }
 
     public void EndInteraction()
     {
         // Stand up from workbench
         isInteracting = false;
-        Debug.Log("Stand up from workbench");
+        GlobalGameData.playerController.EnableMovement();
     }
 
     public void StartAction()
     {
         int currentTime = GlobalGameData.timeManager.GetTime();
 
+        if (currentTime == 5)
+        {
+            //TODO:FIX
+            GlobalGameData.timeManager.AddTime();
+            ++currentTime;
+        }
+
         if (currentTime >= WorkTimeStart && currentTime < WorkTimeEnd)
         {
             // Start working
-            Debug.Log("Work and Start TimeSkip");
 
             // Time Progress
             mHoursSkipped += GlobalGameData.timeManager.HoursPassedFrom(WorkTimeStart);
@@ -41,6 +47,7 @@ public class WorkTable : MonoBehaviour, IInteractableAndActionable
 
             // Money Progress
             GlobalGameData.playerStats.AdjustCash(hoursWorked * IncomePerHour);
+            GlobalGameData.playerStats.AdjustEnergy(hoursWorked * -EnergyPerHour);
         }
         else
         {
@@ -66,5 +73,10 @@ public class WorkTable : MonoBehaviour, IInteractableAndActionable
     public InteractionPriority GetPriority()
     {
         return InteractionPriority.Default;
+    }
+
+    public GameObject GetObject()
+    {
+        return gameObject;
     }
 }

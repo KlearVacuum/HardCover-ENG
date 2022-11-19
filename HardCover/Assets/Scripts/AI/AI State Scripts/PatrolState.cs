@@ -16,7 +16,7 @@ public class PatrolState : AIState
     }
     public override void StartState(AIStateManager stateManager)
     {
-        Debug.Log("start patrol: go to index " + stateManager.ai.patrolIndex);
+        PrintMessage("start patrol: go to index " + stateManager.ai.patrolIndex);
         stateManager.ai.currentCoroutine = stateManager.ai.currentCoroutine.StartCoroutine(stateManager.ai, GoToPatrolPoint(stateManager));
         stateManager.ai.canTransit = false;
     }
@@ -27,14 +27,14 @@ public class PatrolState : AIState
         {
             stateManager.ai.canTransit = true;
             stateManager.ai.StopMoving();
-            Debug.Log("arrived at patrol point " + stateManager.ai.patrolIndex);
+            PrintMessage("arrived at patrol point " + stateManager.ai.patrolIndex);
             stateManager.ai.activePatrol.NextIndex(ref stateManager.ai.patrolIndex);
         }
     }
 
     IEnumerator GoToPatrolPoint(AIStateManager stateManager)
     {
-        Debug.Log("start moving coroutine");
+        PrintMessage("start moving coroutine");
         Vector2 patrolPoint = stateManager.ai.activePatrol.patrolPoints[stateManager.ai.patrolIndex].position;
         Portal closestStairs = null;
         if (Mathf.Abs(stateManager.transform.position.y - patrolPoint.y) > 1f)
@@ -56,7 +56,7 @@ public class PatrolState : AIState
                 distance = Vector2.Distance(stateManager.ai.transform.position, closestStairs.transform.position);
                 yield return null;
             }
-            Debug.Log("interact with stairs");
+            PrintMessage("interact with stairs");
             closestStairs.Teleport(stateManager.gameObject);
             stateManager.ai.climbStairs = false;
         }
@@ -73,5 +73,10 @@ public class PatrolState : AIState
         }
         stateManager.ai.StopMoving();
         yield return new WaitForSeconds(stateManager.ai.activePatrol.waitTime);
+    }
+
+    private void PrintMessage(string msg)
+    {
+        Debug.Log(msg);
     }
 }

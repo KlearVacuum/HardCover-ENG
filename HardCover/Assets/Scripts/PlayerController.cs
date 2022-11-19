@@ -15,9 +15,14 @@ public class PlayerController : MonoBehaviour
     float flipXTime = 0.1f;
     float facingDirTime;
 
+    private int canMove = 1;
+
     Rigidbody2D rb;
     [SerializeField] SpriteRenderer spriteRenderer;
     Animator animator;
+
+    private Vector3 mTempPosition;
+    private Quaternion mTempRotation;
 
     private void Awake()
     {
@@ -27,6 +32,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        GlobalGameData.playerController = this;
+
         currentFacingDir = Vector2.left;
         flipped = false;
         startingScale = transform.localScale.x;
@@ -45,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
     void MovementInput()
     {
-        float horiInput = Input.GetAxisRaw("Horizontal");
+        float horiInput = Input.GetAxisRaw("Horizontal") * canMove;
         moveForce.x += horiInput * moveSpeed * rb.mass * Time.deltaTime;
         animator.SetBool("isMoving", horiInput != 0);
     }
@@ -68,6 +75,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity *= stopDampenRatio;
         }
     }
+
     public void SetDirection(Vector3 direction)
     {
         Vector2 newDir = direction;
@@ -90,6 +98,7 @@ public class PlayerController : MonoBehaviour
             facingDirTime = flipXTime;
         }
     }
+
     IEnumerator FlipXCoroutine(float seconds)
     {
         float totalTime = seconds;
@@ -106,6 +115,7 @@ public class PlayerController : MonoBehaviour
             startScale = startingScale;
             endScale = -startingScale;
         }
+
         while (t < totalTime)
         {
             float lerp = Mathf.Lerp(startScale, endScale, t / totalTime);
@@ -115,7 +125,34 @@ public class PlayerController : MonoBehaviour
             if (t > totalTime) t = totalTime;
             yield return null;
         }
+
         transform.localScale = new Vector3(endScale, transform.localScale.y, transform.localScale.z);
         flipped = !flipped;
+    }
+
+    public void DisableMovement()
+    {
+        canMove = 0;
+        rb.gravityScale = 0;
+    }
+
+    public void EnableMovement()
+    {
+        canMove = 1;
+        rb.gravityScale = 1;
+    }
+
+    public void SetPositionAndRotation(Vector3 position, Quaternion rotation)
+    {
+        mTempPosition = transform.position;
+        mTempRotation = transform.rotation;
+
+        transform.position = position;
+        transform.rotation = rotation;
+    }
+
+    public void ResetPositionAndRotation()
+    {
+        SetPositionAndRotation(mTempPosition, mTempRotation);
     }
 }

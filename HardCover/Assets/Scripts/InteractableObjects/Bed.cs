@@ -6,6 +6,8 @@ public class Bed : MonoBehaviour, IInteractableAndActionable
     public int WakeUpTime = 5; // 5am Wakeup time
     public int OverSleepTime = 3;
 
+    public GameObject Orientation;
+
     public int GetTimeToSleepUntil()
     {
         int timeToSleepUntil;
@@ -44,6 +46,11 @@ public class Bed : MonoBehaviour, IInteractableAndActionable
             }
         }
 
+        if (timeToSleepUntil >= 24)
+        {
+            timeToSleepUntil -= 24;
+        }
+
         return timeToSleepUntil;
     }
 
@@ -72,19 +79,20 @@ public class Bed : MonoBehaviour, IInteractableAndActionable
     public void StartInteraction(GameObject interactor)
     {
         isInteracting = true;
-        Debug.Log("Enter Bed");
+        GlobalGameData.playerController.DisableMovement();
+        GlobalGameData.playerController.SetPositionAndRotation(Orientation.transform.position,
+            Orientation.transform.rotation);
     }
 
     public void EndInteraction()
     {
         isInteracting = false;
-        Debug.Log("Exit Bed");
+        GlobalGameData.playerController.EnableMovement();
+        GlobalGameData.playerController.ResetPositionAndRotation();
     }
 
     public void StartAction()
     {
-        Debug.Log("Start Sleeping");
-
         int timeToSleepUntil = GetTimeToSleepUntil();
 
         int hoursSlept = GlobalGameData.timeManager.AddTimeUntil(timeToSleepUntil);
@@ -111,5 +119,10 @@ public class Bed : MonoBehaviour, IInteractableAndActionable
     public InteractionPriority GetPriority()
     {
         return InteractionPriority.Default;
+    }
+
+    public GameObject GetObject()
+    {
+        return gameObject;
     }
 }
