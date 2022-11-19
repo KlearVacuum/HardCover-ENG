@@ -5,6 +5,9 @@ public class DayNightCycleManager : MonoBehaviour
 {
     public TextMeshProUGUI textBox;
 
+    public int StartTime = 5;
+    public int StartDay = 0;
+
     private int mTime = 0;
     private int mDay = 0;
 
@@ -12,6 +15,8 @@ public class DayNightCycleManager : MonoBehaviour
     void Start()
     {
         GlobalGameData.timeManager = this;
+        mTime = StartTime;
+        mDay = StartDay;
         UpdateUi();
     }
 
@@ -56,8 +61,6 @@ public class DayNightCycleManager : MonoBehaviour
     // Returns how many hours it was
     public int AddTimeUntil(int timeToAddUntil)
     {
-
-
         int timeAdded = HoursLeftTill(timeToAddUntil);
         AddTime(timeAdded);
         return timeAdded;

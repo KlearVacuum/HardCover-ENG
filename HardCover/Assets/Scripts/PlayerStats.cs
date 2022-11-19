@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -8,6 +6,8 @@ public class PlayerStats : MonoBehaviour
 {
     public GameObject playerProgressBarRoot;
     public Image progressBar;
+
+    public GameObject PopInPopOutObject;
 
     public TextMeshProUGUI knowledgeUI, energyUI, cashUI;
 

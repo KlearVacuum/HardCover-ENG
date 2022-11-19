@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public static class GlobalGameData
@@ -19,5 +17,12 @@ public static class GlobalGameData
 
         currentDay = 1;
         currentTime = 0;
+    }
+
+    public static void PopInPopOutValue(Vector3 location, string text)
+    {
+        GameObject.Instantiate(playerStats.PopInPopOutObject,
+            location - ValuePopInPopOut.sDown,
+            Quaternion.identity).GetComponent<ValuePopInPopOut>().SetText(text);
     }
 }
