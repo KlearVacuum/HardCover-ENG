@@ -40,7 +40,7 @@ public class WorkTable : MonoBehaviour, IInteractableAndActionable
             int hoursWorked = GlobalGameData.timeManager.AddTimeUntil(WorkTimeEnd);
 
             // Money Progress
-            GlobalGameData.playerStats.cash += hoursWorked * IncomePerHour;
+            GlobalGameData.playerStats.AdjustCash(hoursWorked * IncomePerHour);
         }
         else
         {

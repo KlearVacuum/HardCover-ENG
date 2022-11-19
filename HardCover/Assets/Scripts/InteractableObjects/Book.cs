@@ -44,14 +44,14 @@ public class Book : MonoBehaviour, IInteractableAndActionable
                 {
                     mRemainingKnowledge -= ProgressionPerHour;
                     timePassedSinceAction -= SecondsPerHour;
-                    GlobalGameData.playerStats.energy -= EnergyConsumptionRatePerHour;
+                    GlobalGameData.playerStats.AdjustEnergy(-EnergyConsumptionRatePerHour);
                     GlobalGameData.timeManager.AddTime();
                 }
             }
             else
             {
                 actionOver = true;
-                GlobalGameData.playerStats.knowledge += KnowledgeToPlayer;
+                GlobalGameData.playerStats.AdjustKnowledge(KnowledgeToPlayer);
                 EndAction();
             }
 

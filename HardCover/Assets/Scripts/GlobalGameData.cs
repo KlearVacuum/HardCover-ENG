@@ -19,7 +19,7 @@ public static class GlobalGameData
         currentTime = 0;
     }
 
-    public static void PopInPopOutValue(Vector3 location, string text)
+    public static void PopInPopOutValue(Vector3 location, string text, Color col)
     {
         GameObject.Instantiate(playerStats.PopInPopOutObject,
             location - ValuePopInPopOut.sDown,

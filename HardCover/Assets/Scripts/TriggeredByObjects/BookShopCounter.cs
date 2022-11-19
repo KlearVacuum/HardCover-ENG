@@ -29,9 +29,6 @@ public class BookShopCounter : MonoBehaviour, IShowUiPopUp
             if (Input.GetKeyDown(KeyCode.Space) && GlobalGameData.playerStats.TryPurchase(mBook.BookCost))
             {
                 mBook.BookOwner = "Amanda";
-
-                string temp = $"-${mBook.BookCost}";
-                GlobalGameData.PopInPopOutValue(mPlayer.transform.position, temp);
             }
         }
     }

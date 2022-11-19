@@ -1,15 +1,38 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class DayNightCycleManager : MonoBehaviour
 {
-    public TextMeshProUGUI textBox;
+    public TextMeshProUGUI dayNumText;
+    public TextMeshProUGUI dayNameText;
+    public TextMeshProUGUI timeText;
 
     public int StartTime = 5;
-    public int StartDay = 0;
+    public int StartDay = 1;
 
     private int mTime = 0;
     private int mDay = 0;
+
+    private static readonly Dictionary<int, string> dayNameMap
+        = new Dictionary<int, string>()
+        {
+            { 1, "Monday" },
+            { 2, "Tuesday" },
+            { 3, "Wednesday" },
+            { 4, "Thursday" },
+            { 5, "Friday" },
+            { 6, "Saturday" },
+            { 7, "Sunday" },
+            { 8, "Monday" },
+            { 9, "Tuesday" },
+            { 10, "Wednesday" },
+            { 11, "Thursday" },
+            { 12, "Friday" },
+            { 13, "Saturday" },
+            { 14, "Sunday" },
+            { 15, "Monday" }
+        };
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +81,7 @@ public class DayNightCycleManager : MonoBehaviour
         return timeToAdd;
     }
 
-    // Returns how many hours it was
+// Returns how many hours it was
     public int AddTimeUntil(int timeToAddUntil)
     {
         int timeAdded = HoursLeftTill(timeToAddUntil);
@@ -90,6 +113,8 @@ public class DayNightCycleManager : MonoBehaviour
 
     private void UpdateUi()
     {
-        textBox.text = $"Day: {mDay}\t\t\t Time: {mTime}";
+        dayNumText.text = mDay.ToString();
+        dayNameText.text = dayNameMap[mDay];
+        timeText.text = $"{mTime:D2}:00";
     }
 }

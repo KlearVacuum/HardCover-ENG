@@ -19,7 +19,11 @@ public class Bed : MonoBehaviour, IInteractableAndActionable
         int tillWakeUpTime = GlobalGameData.timeManager.HoursLeftTill(WakeUpTime);
         int difference = hoursRequired - tillWakeUpTime;
 
-        if (difference >= 0) // Need to sleep more then you have time for or Just nice
+        if (time == WakeUpTime && hoursRequired == 0)
+        {
+            timeToSleepUntil = time + OverSleepTime;
+        }
+        else if (difference >= 0) // Need to sleep more then you have time for or Just nice
         {
             // Just sleep till wake up time
             timeToSleepUntil = WakeUpTime;
@@ -84,7 +88,9 @@ public class Bed : MonoBehaviour, IInteractableAndActionable
         int timeToSleepUntil = GetTimeToSleepUntil();
 
         int hoursSlept = GlobalGameData.timeManager.AddTimeUntil(timeToSleepUntil);
-        GlobalGameData.playerStats.energy += hoursSlept * EnergyRecoveryPerHour;
+        GlobalGameData.playerStats.AdjustEnergy(hoursSlept * EnergyRecoveryPerHour);
+
+        EndInteraction();
     }
 
     public void EndAction()

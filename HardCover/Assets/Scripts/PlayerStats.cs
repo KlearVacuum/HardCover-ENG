@@ -2,6 +2,20 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+[System.Serializable]
+public struct StatAdjustmentColors
+{
+    public Color KnowledgeIncrease;
+    public Color KnowledgeDecrease;
+
+    public Color EnergyIncrease;
+    public Color EnergyDecrease;
+
+    public Color CashIncrease;
+    public Color CashDecrease;
+}
+
+
 public class PlayerStats : MonoBehaviour
 {
     public GameObject playerProgressBarRoot;
@@ -9,50 +23,25 @@ public class PlayerStats : MonoBehaviour
 
     public GameObject PopInPopOutObject;
 
+    public StatAdjustmentColors StatAdjustColors = new StatAdjustmentColors();
+
     public TextMeshProUGUI knowledgeUI, energyUI, cashUI;
 
     private int mKnowledge;
-
-    public int knowledge
-    {
-        get => mKnowledge;
-        set
-        {
-            mKnowledge = Mathf.Clamp(value, 0, 100);
-            UpdateKnowledgeUi(mKnowledge);
-        }
-    }
-
     private int mEnergy;
-
-    public int energy
-    {
-        get => mEnergy;
-        set
-        {
-            mEnergy = Mathf.Clamp(value, 0, 100);
-            UpdateEnergyUi(mEnergy);
-        }
-    }
-
     private int mCash;
 
-    public int cash
-    {
-        get => mCash;
-        set
-        {
-            mCash = Mathf.Max(value, 0);
-            UpdateCashUi(mCash);
-        }
-    }
+    //Getters
+    public int knowledge => mKnowledge;
+    public int energy => mEnergy;
+    public int cash => mCash;
 
     private void Start()
     {
         GlobalGameData.playerStats = this;
-        knowledge = 0;
-        energy = 100;
-        cash = 150;
+        mKnowledge = 0;
+        mEnergy = 100;
+        mCash = 150;
     }
 
     private void Update()
@@ -71,21 +60,58 @@ public class PlayerStats : MonoBehaviour
         //}
     }
 
-    void UpdateKnowledgeUi(int amount)
+    public void AdjustKnowledge(int value)
     {
-        double value = amount;
-        knowledgeUI.text = value + "% Knowledge Progress";
+        int initKnowledge = mKnowledge;
+        mKnowledge = Mathf.Clamp(mKnowledge + value, 0, 100);
+        value = mKnowledge - initKnowledge;
+
+        if (value >= 0)
+        {
+            GlobalGameData.PopInPopOutValue(transform.position, $"+{value}%", StatAdjustColors.KnowledgeIncrease);
+        }
+        else 
+        {
+            GlobalGameData.PopInPopOutValue(transform.position, $"-{value}%", StatAdjustColors.KnowledgeDecrease);
+        }
+
+        knowledgeUI.text = mKnowledge + "% Knowledge Progress";
     }
 
-    void UpdateEnergyUi(int amount)
+    public void AdjustEnergy(int value)
     {
-        double value = amount;
-        energyUI.text = value + "% Energy Remaining";
+        int initEnergy = mEnergy;
+        mEnergy = Mathf.Clamp(mEnergy + value, 0, 100);
+        value = mEnergy - initEnergy;
+
+        if (value >= 0)
+        {
+            GlobalGameData.PopInPopOutValue(transform.position, $"+{value}E", StatAdjustColors.EnergyIncrease);
+        }
+        else
+        {
+            GlobalGameData.PopInPopOutValue(transform.position, $"-{value}E", StatAdjustColors.EnergyDecrease);
+        }
+
+        energyUI.text = mEnergy + "% Energy Remaining";
     }
 
-    void UpdateCashUi(int amount)
+    public void AdjustCash(int value)
     {
-        cashUI.text = "$" + amount;
+        int initCash = mCash;
+        mCash = Mathf.Max(mCash + value, 0);
+        value = mCash - initCash;
+
+        if (value >= 0)
+        {
+            GlobalGameData.PopInPopOutValue(transform.position, $"+${value}", StatAdjustColors.CashIncrease);
+        }
+        else
+        {
+            GlobalGameData.PopInPopOutValue(transform.position, $"-${value}", StatAdjustColors.CashDecrease);
+        }
+
+        cashUI.text = "$" + mCash;
     }
 
     public void ShowActionBar()
@@ -106,9 +132,9 @@ public class PlayerStats : MonoBehaviour
 
     public bool TryPurchase(int cost)
     {
-        if (cash >= cost)
+        if (mCash >= cost)
         {
-            cash -= cost;
+            AdjustCash(-cost);
             return true;
         }
 
@@ -117,7 +143,7 @@ public class PlayerStats : MonoBehaviour
 
     public void TriggerPenalty()
     {
-        mCash -= 8;
+        AdjustCash(-8);
         int time = GlobalGameData.timeManager.GetTime();
 
         if (time > 18 || time < 5) // Time skip to 5am

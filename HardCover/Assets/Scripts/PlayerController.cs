@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        currentFacingDir = Vector2.right;
+        currentFacingDir = Vector2.left;
         flipped = false;
         startingScale = transform.localScale.x;
     }
