@@ -13,11 +13,14 @@ public class ChoiceDialogManager : MonoBehaviour
     private string mCurrentKey = null;
     private int mCurrentProgress = 0;
 
+    void Awake()
+    {
+        GlobalGameData.choiceDialogManager = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        GlobalGameData.choiceDialogManager = this;
-
         foreach (Pair p in GlobalGameData.dialogManager.IconList)
         {
             IconDictionary[p.Name] = p.Icon;

@@ -2,24 +2,40 @@
 
 public class Drawer : MonoBehaviour, IInteractable
 {
-    private Book mBook = null;
+    public DrawerUiScript drawerUi = null;
+
+    private Book[] mBookList = new Book[4];
+
+    public Book GetBook(int i)
+    {
+        return mBookList[i];
+    }
+
+    public Book TakeBook(int i)
+    {
+        Book b = mBookList[i];
+        mBookList[i] = null;
+        return b;
+    }
 
     public void StartInteraction(GameObject interactor)
     {
         IInteractable ii = interactor.GetComponent<InteractionController>().GetBook();
         if (ii != null)
         {
+            Book b = ii.GetObject().GetComponent<Book>();
+
             // Holding Book
-            mBook = ii.GetObject().GetComponent<Book>();
+            mBookList[b.BookVolume - 1] = b;
 
             // Puts book into drawer
-            mBook.EndInteraction();
-            mBook.SetPosition(transform.position);
+            b.EndInteraction();
+            b.SetPosition(transform.position);
+            b.gameObject.SetActive(false);
         }
-        else if (mBook != null)
+        else
         {
-            mBook.StartInteraction(interactor);
-            mBook = null;
+            drawerUi.Show();
         }
     }
 

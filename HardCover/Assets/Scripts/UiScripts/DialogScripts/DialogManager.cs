@@ -42,11 +42,14 @@ public class DialogManager : MonoBehaviour
     private string mCurrentKey = null;
     private int mCurrentProgress = 0;
 
+    void Awake()
+    {
+        GlobalGameData.dialogManager = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        GlobalGameData.dialogManager = this;
-
         foreach (Pair p in IconList)
         {
             IconDictionary[p.Name] = p.Icon;

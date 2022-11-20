@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Assertions;
 
 public class Book : MonoBehaviour, IInteractableAndActionable
 {
@@ -12,6 +13,7 @@ public class Book : MonoBehaviour, IInteractableAndActionable
 
     // This is the name of owner
     public string BookOwner = "Amanda";
+    public int BookVolume = 0;
 
     private const int kStartingKnowledge = 100;
     private int mRemainingKnowledge = kStartingKnowledge;
@@ -25,6 +27,8 @@ public class Book : MonoBehaviour, IInteractableAndActionable
     {
         mDefaultPosition = transform.parent.position;
         mSpriteRenderer = GetComponent<SpriteRenderer>();
+
+        Assert.AreNotEqual(BookVolume, 0, "Please set the book volume thanks");
     }
 
     private void Update()
@@ -74,6 +78,11 @@ public class Book : MonoBehaviour, IInteractableAndActionable
     public void SetPosition(Vector3 pos)
     {
         transform.parent.position = pos;
+    }
+
+    public int GetProgression()
+    {
+        return (kStartingKnowledge - mRemainingKnowledge) * 100 / kStartingKnowledge;
     }
 
     // ========================================================
