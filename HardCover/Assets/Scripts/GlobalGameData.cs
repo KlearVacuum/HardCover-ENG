@@ -16,9 +16,6 @@ public static class GlobalGameData
         timeManager = null;
         playerController = null;
         portalCooldown = 0;
-
-        currentDay = 1;
-        currentTime = 0;
     }
 
     public static void PopInPopOutValue(Vector3 location, string text, Color col)

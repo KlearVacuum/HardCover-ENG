@@ -129,7 +129,7 @@ public class AIEntityController : MonoBehaviour
         if (allPatrolData == null || allPatrolData.Count == 0) return null;
         foreach (PatrolData patrolData in allPatrolData)
         {
-            if (patrolData.PatrolAvailable(GlobalGameData.currentDay, GlobalGameData.currentTime)) // replace 0 with current in-game time
+            if (patrolData.PatrolAvailable(GlobalGameData.timeManager.GetDay(), GlobalGameData.timeManager.GetTime())) // replace 0 with current in-game time
             {
                 if (patrolData.patrolPoints.Count == 0) Debug.LogError("Patrol Data has no patrol points!");
                 return patrolData;

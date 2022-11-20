@@ -111,6 +111,11 @@ public class DayNightCycleManager : MonoBehaviour
         return mDay;
     }
 
+    public string GetDayName()
+    {
+        return dayNameMap[mDay];
+    }
+
     private void UpdateUi()
     {
         dayNumText.text = mDay.ToString();
