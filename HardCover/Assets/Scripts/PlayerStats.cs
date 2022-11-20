@@ -66,7 +66,7 @@ public class PlayerStats : MonoBehaviour
         int initKnowledge = mKnowledge;
         mKnowledge = Mathf.Clamp(mKnowledge + value, 0, 100);
         value = mKnowledge - initKnowledge;
-        knowledgeUI.text = $"{mKnowledge::2D}%";
+        knowledgeUI.text = $"{mKnowledge}%";
 
         if (!pop)
         {
@@ -88,7 +88,7 @@ public class PlayerStats : MonoBehaviour
         int initEnergy = mEnergy;
         mEnergy = Mathf.Clamp(mEnergy + value, 0, 100);
         value = mEnergy - initEnergy;
-        energyUI.text = $"{mEnergy::2D}%";
+        energyUI.text = $"{mEnergy}%";
 
         if (!pop)
         {
@@ -110,7 +110,7 @@ public class PlayerStats : MonoBehaviour
         int initCash = mCash;
         mCash = Mathf.Max(mCash + value, 0);
         value = mCash - initCash;
-        cashUI.text = $"{mCash::3D}";
+        cashUI.text = $"{mCash}";
 
         if (!pop)
         {

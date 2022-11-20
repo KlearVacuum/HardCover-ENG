@@ -11,6 +11,8 @@ public class TypeWriterEffect : MonoBehaviour
     private TextMeshProUGUI mLocalText;
     private string mToPrint;
 
+    private Coroutine currentCoroutine = null;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -22,7 +24,21 @@ public class TypeWriterEffect : MonoBehaviour
         mToPrint = text;
         mLocalText.text = "";
 
-        StartCoroutine(TypeWriter());
+        currentCoroutine = StartCoroutine(TypeWriter());
+    }
+
+    //True means skipped something, false means finish already
+    public bool FinishEffect()
+    {
+        if (currentCoroutine == null)
+        {
+            return false;
+        }
+
+        StopCoroutine(currentCoroutine);
+        currentCoroutine = null;
+        mLocalText.text = mToPrint;
+        return true;
     }
 
     private IEnumerator TypeWriter()
@@ -34,5 +50,7 @@ public class TypeWriterEffect : MonoBehaviour
             mLocalText.text += c;
             yield return new WaitForSeconds(delayBetweenCharacter);
         }
+
+        currentCoroutine = null;
     }
 }

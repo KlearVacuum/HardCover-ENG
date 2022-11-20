@@ -5,6 +5,8 @@ public static class GlobalGameData
     public static PlayerController playerController;
     public static PlayerStats playerStats;
     public static DayNightCycleManager timeManager;
+    public static DialogManager dialogManager;
+    public static ChoiceDialogManager choiceDialogManager;
     public static float portalCooldown;
 
     public static int currentDay;
@@ -15,6 +17,9 @@ public static class GlobalGameData
         playerStats = null;
         timeManager = null;
         playerController = null;
+        dialogManager = null;
+        choiceDialogManager = null;
+
         portalCooldown = 0;
     }
 
