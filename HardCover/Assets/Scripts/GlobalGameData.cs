@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public static class GlobalGameData
 {
@@ -9,8 +10,7 @@ public static class GlobalGameData
     public static ChoiceDialogManager choiceDialogManager;
     public static float portalCooldown;
 
-    public static int currentDay;
-    public static float currentTime;
+    public static List<AIEntityController> allNPCs = new List<AIEntityController>();
 
     public static void Reset()
     {
@@ -21,6 +21,7 @@ public static class GlobalGameData
         choiceDialogManager = null;
 
         portalCooldown = 0;
+        allNPCs.Clear();
     }
 
     public static void PopInPopOutValue(Vector3 location, string text, Color col)

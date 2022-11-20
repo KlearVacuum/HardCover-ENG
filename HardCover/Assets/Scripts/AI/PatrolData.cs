@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class PatrolData
 {
+    public new string name;
     public List<Transform> patrolPoints;
     public Vector2 minMaxAvailableDay;
     public Vector2 minMaxAvailableHour;
