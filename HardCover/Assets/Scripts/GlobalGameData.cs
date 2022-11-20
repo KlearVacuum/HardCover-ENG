@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public static class GlobalGameData
 {
@@ -7,8 +8,7 @@ public static class GlobalGameData
     public static DayNightCycleManager timeManager;
     public static float portalCooldown;
 
-    public static int currentDay;
-    public static float currentTime;
+    public static List<AIEntityController> allNPCs = new List<AIEntityController>();
 
     public static void Reset()
     {
@@ -16,6 +16,7 @@ public static class GlobalGameData
         timeManager = null;
         playerController = null;
         portalCooldown = 0;
+        allNPCs.Clear();
     }
 
     public static void PopInPopOutValue(Vector3 location, string text, Color col)

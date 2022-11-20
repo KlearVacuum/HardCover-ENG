@@ -54,6 +54,8 @@ public class AIEntityController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         animator = spriteRenderer.GetComponent<Animator>();
+
+        GlobalGameData.allNPCs.Add(this);
     }
 
     void Start()

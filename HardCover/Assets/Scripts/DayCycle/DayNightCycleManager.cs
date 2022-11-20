@@ -41,6 +41,7 @@ public class DayNightCycleManager : MonoBehaviour
         mTime = StartTime;
         mDay = StartDay;
         UpdateUi();
+        foreach (var npc in GlobalGameData.allNPCs) npc.canTransit = true;
     }
 
     public int HoursPassedFrom(int timeFrom)
@@ -98,6 +99,7 @@ public class DayNightCycleManager : MonoBehaviour
             ++mDay;
         }
 
+        foreach (var npc in GlobalGameData.allNPCs) npc.canTransit = true;
         UpdateUi();
     }
 
