@@ -51,10 +51,14 @@ MonoBehaviour:
   debugEnable: 0
   canTransit: 0
   allPatrolData:
-  - patrolPoints: []
+  - patrolPoints:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     minMaxAvailableDay: {x: 0, y: 0}
     minMaxAvailableHour: {x: 0, y: 0}
-    waitTime: 0
+    waitTime: 5
   forwardDir: {fileID: 5933897288861594435}
   mMaxTravelTime: 20
   moveForce: 800
@@ -124,8 +128,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0, y: 1.5}
+  m_Size: {x: 1, y: 3}
   m_Direction: 0
 --- !u!1 &5933897288861594432
 GameObject:

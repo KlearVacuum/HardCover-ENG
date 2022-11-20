@@ -41,6 +41,7 @@ public class PatrolState : AIState
         {
             stateManager.ai.climbStairs = true;
             closestStairs = stateManager.ai.GetClosestStairs(stateManager.ai.transform.position, 20f);
+            if (closestStairs == null) Debug.Log("no nearby stairs");
         }
 
         float distance = float.MaxValue;

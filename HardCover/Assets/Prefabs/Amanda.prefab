@@ -520,6 +520,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerProgressBarRoot: {fileID: 1416253800}
   progressBar: {fileID: 2075657036}
+  PopInPopOutObject: {fileID: 0}
+  StatAdjustColors:
+    KnowledgeIncrease: {r: 0, g: 0, b: 0, a: 0}
+    KnowledgeDecrease: {r: 0, g: 0, b: 0, a: 0}
+    EnergyIncrease: {r: 0, g: 0, b: 0, a: 0}
+    EnergyDecrease: {r: 0, g: 0, b: 0, a: 0}
+    CashIncrease: {r: 0, g: 0, b: 0, a: 0}
+    CashDecrease: {r: 0, g: 0, b: 0, a: 0}
   knowledgeUI: {fileID: 0}
   energyUI: {fileID: 0}
   cashUI: {fileID: 0}
