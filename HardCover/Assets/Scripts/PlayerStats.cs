@@ -36,10 +36,13 @@ public class PlayerStats : MonoBehaviour
     public int energy => mEnergy;
     public int cash => mCash;
 
-    private void Start()
+    private void Awake()
     {
         GlobalGameData.playerStats = this;
+    }
 
+    private void Start()
+    {
         AdjustKnowledge(0, false);
         AdjustEnergy(100, false);
         AdjustCash(150, false);

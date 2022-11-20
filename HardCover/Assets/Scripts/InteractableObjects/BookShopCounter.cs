@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class BookShopCounter : MonoBehaviour, IShowUiPopUp, IInteractableAndActionable
+public class BookShopCounter : MonoBehaviour, IInteractableAndActionable
 {
     public Transform bookLocationOnCounter;
     private Book mBook;
@@ -9,24 +9,6 @@ public class BookShopCounter : MonoBehaviour, IShowUiPopUp, IInteractableAndActi
     // ========================================================
     // ALL INTERFACE THINGS
     // ========================================================
-
-    // ========================================================
-    // IShowUiPopUp
-    // ========================================================
-    private readonly List<string> canTriggerUiPopUpList = new() { "Player" };
-
-    public List<string> TagsToInteractWith()
-    {
-        return canTriggerUiPopUpList;
-    }
-
-    public void TriggerEnter(Collider2D collision)
-    {
-    }
-
-    public void TriggerExit(Collider2D collision)
-    {
-    }
 
     // ========================================================
     // IInteractable

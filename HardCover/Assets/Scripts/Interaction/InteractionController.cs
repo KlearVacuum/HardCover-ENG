@@ -44,7 +44,7 @@ public class InteractionController : MonoBehaviour
         }
     }
 
-    void ToggleInteraction(IToggleInteractable iti)
+    private void ToggleInteraction(IToggleInteractable iti)
     {
         if (iti.IsInteracting())
         {
@@ -56,7 +56,7 @@ public class InteractionController : MonoBehaviour
         }
     }
 
-    void ToggleAction(IInteractableAndActionable iia)
+    private void ToggleAction(IInteractableAndActionable iia)
     {
         if (iia.IsActioning())
         {
@@ -66,6 +66,41 @@ public class InteractionController : MonoBehaviour
         {
             iia.StartAction();
         }
+    }
+
+    public bool CanInteract()
+    {
+        if (interactableObj.Count > 0)
+        {
+            IInteractable top = interactableObj.Last();
+
+            if (top is IInteractableAndActionable iia) // ToggleInteractable and Actionable
+            {
+                if (iia.IsActioning())
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool CanAction()
+    {
+        if (interactableObj.Count > 0)
+        {
+            IInteractable top = interactableObj.Last();
+
+            if (top is IInteractableAndActionable iia) // ToggleInteractable and Actionable
+            {
+                return iia.IsInteracting();
+            }
+        }
+
+        return false;
     }
 
     public void AddInteractable(IInteractable ii)
