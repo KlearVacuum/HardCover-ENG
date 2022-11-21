@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class ChoiceDialogManager : MonoBehaviour
 {
     [SerializeField] private ChoiceChatbox mChatBox;
-    [SerializeField] private int mCurrentProgress = 0;
+    private int mCurrentProgress = 0;
 
     public List<LineOfDialog> FullChatExposed = new();
 

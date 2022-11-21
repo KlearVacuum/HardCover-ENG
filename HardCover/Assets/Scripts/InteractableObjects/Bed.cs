@@ -118,7 +118,7 @@ public class Bed : MonoBehaviour, IInteractableAndActionable
 
     public InteractionPriority GetPriority()
     {
-        return InteractionPriority.Default;
+        return isInteracting ? InteractionPriority.High : InteractionPriority.Default;
     }
 
     public GameObject GetObject()
