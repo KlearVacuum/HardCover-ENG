@@ -12,7 +12,7 @@ public struct Dialog
     // True to make it choiced
     // 1 for choice 1
     // 2 for choice 2
-    public UnityAction<bool, int> FunctionToInvoke;
+    public UnityEvent<bool, int> FunctionToInvoke;
 }
 
 [System.Serializable]
@@ -91,6 +91,7 @@ public class DialogManager : MonoBehaviour
 
     public void EndChat()
     {
+        Debug.Log("Chat Ended");
         mChatBox.DisableChat();
         GlobalGameData.playerController.EnableMovement();
     }
@@ -101,5 +102,7 @@ public class DialogManager : MonoBehaviour
 
         mChatBox.SetSpeaker(IconDictionary[d.Speaker], d.Speaker);
         mChatBox.SetText(d.Text);
+
+        Debug.Log("Chat Progressed " + mCurrentProgress + " Out of: " + FullChat[mCurrentKey].Count);
     }
 }

@@ -1,0 +1,335 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4137564787863911030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4137564787863911028}
+  - component: {fileID: 4137564787863911031}
+  - component: {fileID: 4137564787863911029}
+  - component: {fileID: 4137564787863911035}
+  - component: {fileID: 4137564787863911034}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4137564787863911028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4137564787863911030}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4137564787863911031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4137564787863911030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57da69262980aa43b97d76991ec8e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4137564787863911029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4137564787863911030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ba133ec63de4d44a60ff425d94f3d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayNumText: {fileID: 0}
+  dayNameText: {fileID: 0}
+  timeText: {fileID: 0}
+  StartTime: 6
+  StartDay: 1
+--- !u!114 &4137564787863911035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4137564787863911030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6095c365c9e5aee4ba6d7130b2c8e4b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mChatBox: {fileID: 0}
+  FullChatExposed:
+  - Key: Amanda_25
+    Value:
+    - Speaker: Amanda
+      Text: "Hmm, I\u2019m starting to understand more of what these words mean!
+        Studying isn\u2019t as impossible as everyone claims it to be! "
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Amanda_50
+    Value:
+    - Speaker: Amanda
+      Text: "Ouch, my head hurts\u2026 the more I seem to study, the less I seem
+        to understand\u2026 Am I just not cut out for this?"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Amanda_75
+    Value:
+    - Speaker: Amanda
+      Text: "I could do so much more than repeat this mundane cycle of working at
+        the textile factory, living paycheck to paycheck\u2026 I want to, but\u2026
+        am I allowed to? "
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Amanda_100
+    Value:
+    - Speaker: Amanda
+      Text: "I\u2019m ready for the exams, I know it! But is society ready to accept
+        me? Or will I be forever tied to the threads of Ting Hoon Textile Co? "
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Amanda_LowMoney
+    Value:
+    - Speaker: Amanda
+      Text: "I don\u2019t have enough to even get by, how can I even dream about
+        entering a University? I should focus on surviving first."
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Amanda_LowEnergy
+    Value:
+    - Speaker: Amanda
+      Text: "So\u2026 tired\u2026 must\u2026 stay focused\u2026!"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Coworker_BeforeWork
+    Value:
+    - Speaker: Coworker
+      Text: Time to make ourselves useful. Time for work!
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Coworker_DuringWork
+    Value:
+    - Speaker: Coworker
+      Text: Hush! What if Ting Hoon catches you goofing off?
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Coworker_AfterWork
+    Value:
+    - Speaker: Coworker
+      Text: "What an exhausting day\u2026"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Coworker_CatchAmanda0
+    Value:
+    - Speaker: Coworker
+      Text: "A-Amanda\u2026? You don\u2019t happen to be reading that, right? That\u2019s\u2026
+        not allowed here\u2026 Please, keep it away before it\u2019s too late\u2026!"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Coworker_CatchAmanda1
+    Value:
+    - Speaker: Coworker
+      Text: "I see nothing\u2026 I see nothing\u2026 I see nothing\u2026 but please,
+        Amanda\u2026 it\u2019s not worth it\u2026"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ting Hoon_BeforeWork
+    Value:
+    - Speaker: Ting Hoon
+      Text: "What are you doing here? The factory isn\u2019t open yet!"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ting Hoon_DuringWork
+    Value:
+    - Speaker: Ting Hoon
+      Text: "If you\u2019ve got time to chatter, you\u2019ve got time to spin those
+        mills! Get to it!"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ting Hoon_AfterWork
+    Value:
+    - Speaker: Ting Hoon
+      Text: "You\u2019re not useful up here, get out!"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ting Hoon_CatchAmanda0
+    Value:
+    - Speaker: Ting Hoon
+      Text: "You! You\u2019re just a peasant woman, don\u2019t pretend to be something
+        you\u2019re not!"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ting Hoon_CatchAmanda1
+    Value:
+    - Speaker: Ting Hoon
+      Text: "Woman! Are you trying to tarnish the reputation of our company? The
+        next time I see you holding a book, you\u2019re out of here, you understand!?"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ting Hoon_AmandaSkipWork12
+    Value:
+    - Speaker: Ting Hoon
+      Text: "And where have you been lately, woman? Don\u2019t think I\u2019m not 
+        watching! You\u2019ll have a pay cut for today!"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ting Hoon_AmandaSkipWork24
+    Value:
+    - Speaker: Ting Hoon
+      Text: "Oh, so you think I\u2019m easy to mess with, do you, woman? This is
+        your last warning; it won\u2019t be just a fine next time!"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ting Hoon_AmandaSkipWork36
+    Value:
+    - Speaker: Ting Hoon
+      Text: "I\u2019ve about had it with you, woman! Get out of my company! Crawl
+        back to whatever hole you came from!"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Larry_BeforeWork
+    Value:
+    - Speaker: Larry
+      Text: Morning, sweetheart! Hope you had a great rest!
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Larry_DuringWork
+    Value:
+    - Speaker: Larry
+      Text: "Don\u2019t you have work today? Are you feeling unwell?"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Larry_AfterWork
+    Value:
+    - Speaker: Larry
+      Text: "You\u2019re tired, and so am I\u2026 please leave me alone for the night\u2026"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Larry_CatchAmanda0
+    Value:
+    - Speaker: Larry
+      Text: Hey! Girls should not have what belongs only to the boys! Get rid of
+        that book at once!
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Larry_CatchAmanda1
+    Value:
+    - Speaker: Larry
+      Text: Again with the book! What do you think others would say if they found
+        out we have a witch under our roof!? Burn it at once!
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ah Chai_BeforeWork
+    Value:
+    - Speaker: Ah Chai
+      Text: Hello, Amanda.
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ah Chai_DuringWork
+    Value:
+    - Speaker: Ah Chai
+      Text: "You seem rather free today\u2026 have you finally married out into a
+        wealthy family?"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ah Chai_AfterWork
+    Value:
+    - Speaker: Ah Chai
+      Text: "sigh another day without a rich kid visiting\u2026"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ah Chai_BuyBook0
+    Value:
+    - Speaker: Ah Chai
+      Text: "Well, you\u2019re the last person I\u2019d expect to be interested in
+        the likes of education, but business is business, eh? Do come again. "
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ah Chai_BuyBook1
+    Value:
+    - Speaker: Ah Chai
+      Text: "It seems you\u2019re much more loaded than a woman ought to be! Running
+        an errand for your man, perhaps?"
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ah Chai_CatchAmanda0
+    Value:
+    - Speaker: Ah Chai
+      Text: "If I tell everyone what I see here today, we both know that it won\u2019t
+        end well for you\u2026 "
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  IconList:
+  - Name: Amanda
+    Icon: {fileID: 21300000, guid: 0111fff496023b54b91828c2c9141931, type: 3}
+  - Name: Ting Hoon
+    Icon: {fileID: 21300000, guid: 841b7d03fe004694c90aeafb3611d698, type: 3}
+  - Name: Larry
+    Icon: {fileID: 21300000, guid: 967821d770e205b42b0e10388b27639a, type: 3}
+  - Name: Ah Chai
+    Icon: {fileID: 21300000, guid: b10a4c4ed1999834e81f50b2be377ee1, type: 3}
+  - Name: Coworker
+    Icon: {fileID: 21300000, guid: 392c86c4981d7cb47a4f0b7652ba8707, type: 3}
+--- !u!114 &4137564787863911034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4137564787863911030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc324c1355244c5409f512194c67eb8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mChatBox: {fileID: 0}
+  FullChatExposed: []
