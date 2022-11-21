@@ -71,6 +71,22 @@ public class PlayerStats : MonoBehaviour
         value = mKnowledge - initKnowledge;
         knowledgeUI.text = $"{mKnowledge}%";
 
+        switch (mKnowledge)
+        {
+            case 100:
+                GlobalGameData.dialogManager.StartChat("Amanda", "100");
+                break;
+            case 75:
+                GlobalGameData.dialogManager.StartChat("Amanda", "75");
+                break;
+            case 50:
+                GlobalGameData.dialogManager.StartChat("Amanda", "50");
+                break;
+            case 25:
+                GlobalGameData.dialogManager.StartChat("Amanda", "25");
+                break;
+        }
+
         if (!pop)
         {
             return;
