@@ -44,9 +44,4 @@ public class TempScript : MonoBehaviour
     {
         Debug.Log("TRIGGER FIRED CUTSCENE");
     }
-
-    public void GoTo()
-    {
-        GlobalGameData.choiceDialogManager.StartChat("Ting Hoon", "Convo_1", 1);
-    }
 }

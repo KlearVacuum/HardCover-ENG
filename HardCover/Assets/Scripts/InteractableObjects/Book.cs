@@ -35,7 +35,7 @@ public class Book : MonoBehaviour, IInteractableAndActionable
     {
         if (theInteractor != null)
         {
-            SetPosition(theInteractor.transform.position);
+            SetPosition(theInteractor.transform.position + Vector3.up);
         }
 
         if (isActioning)
@@ -108,6 +108,7 @@ public class Book : MonoBehaviour, IInteractableAndActionable
 
     public void EndInteraction()
     {
+        SetPosition(theInteractor.transform.position);
         // Drop Book
         theInteractor = null;
         mSpriteRenderer.sortingLayerName = "InteractableInfrontBackground";

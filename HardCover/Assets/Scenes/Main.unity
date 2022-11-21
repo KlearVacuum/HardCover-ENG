@@ -3338,7 +3338,7 @@ MonoBehaviour:
   BookCost: 30
   SecondsPerHour: 2
   BookOwner: NotAmanda
-  BookVolume: 1
+  BookVolume: 3
 --- !u!114 &234837512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15477,7 +15477,7 @@ MonoBehaviour:
   BookCost: 30
   SecondsPerHour: 2
   BookOwner: NotAmanda
-  BookVolume: 1
+  BookVolume: 2
 --- !u!114 &1544476604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19754,7 +19754,7 @@ MonoBehaviour:
   BookCost: 30
   SecondsPerHour: 2
   BookOwner: Amanda
-  BookVolume: 1
+  BookVolume: 4
 --- !u!114 &1980156187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20590,6 +20590,52 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 137347071}
     - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[0].Text
+      value: "What\u2019s your name again\u2026? Ah yes, Mandy."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[1].Text
+      value: 'You seem pretty capable, better than the rest of the women out there,
+        at least. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[2].Text
+      value: "How about you marry my son? You don\u2019t ever have to worry about
+        money or work ever again."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[1].Speaker
+      value: Ting Hoon
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[2].Speaker
+      value: Ting Hoon
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[1].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[2].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[1].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 568656699}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[2].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 568656699}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
       propertyPath: FullChatExposed.Array.data[0].Value.Array.data[3].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 568656699}
@@ -20597,14 +20643,138 @@ PrefabInstance:
       propertyPath: FullChatExposed.Array.data[5].Value.Array.data[1].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 568656699}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[1].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[2].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[1].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MarriageDecision
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[2].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MarriageDecision
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[1].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TempScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[2].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TempScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[1].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[2].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
       propertyPath: mChatBox
       value: 
       objectReference: {fileID: 275253204}
     - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.size
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[30].Key
+      value: Amanda_Intro
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[31].Key
+      value: Amanda_Intro2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[30].Value.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[31].Value.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].Text
+      value: "The entrance exam into the local University is in 2 weeks. I\u2019ve
+        been saving up and working hard, but will that be enough to let me in? No,
+        no matter what they say, I\u2019ll have to try."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[31].Value.Array.data[0].Text
+      value: "\u2026Amanda? Amanda, wake up! We\u2019re gonna be late for work! You
+        don\u2019t wanna make boss Ting Hoon any more mad than he already is every
+        other day! Let\u2019s go!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].Speaker
+      value: Amanda
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[31].Value.Array.data[0].Speaker
+      value: Coworker
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[31].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
       propertyPath: FullChatExposed.Array.data[18].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 568656699}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4137564787886018871}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[31].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4137564787886018871}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[31].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CallFadeOut
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[31].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CallFadeOut
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[31].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[31].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
 --- !u!114 &4137564787886018867 stripped
@@ -20627,6 +20797,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc324c1355244c5409f512194c67eb8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4137564787886018871 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4137564787863911031, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+  m_PrefabInstance: {fileID: 4137564787886018866}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57da69262980aa43b97d76991ec8e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &6495053722299360736
@@ -20842,7 +21023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1701307049, guid: 9229a6eae3dae844c921b94eaf3b88be, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.75
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1701307052, guid: 9229a6eae3dae844c921b94eaf3b88be, type: 3}
       propertyPath: m_Camera
