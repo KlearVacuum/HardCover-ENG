@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         GlobalGameData.playerController = this;
 
-        currentFacingDir = Vector2.left;
+        currentFacingDir = Vector2.right;
         flipped = false;
         startingScale = transform.localScale.x;
     }

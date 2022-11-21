@@ -136,7 +136,7 @@ public class PlayerStats : MonoBehaviour
         int initCash = mCash;
         mCash = Mathf.Max(mCash + value, 0);
         value = mCash - initCash;
-        cashUI.text = $"{mCash}";
+        cashUI.text = $"${mCash}";
 
         if (mCash <= 50)
         {
