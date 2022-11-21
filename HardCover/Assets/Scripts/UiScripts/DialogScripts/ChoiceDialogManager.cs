@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ChoiceDialogManager : MonoBehaviour
 {
     [SerializeField] private ChoiceChatbox mChatBox;
+    [SerializeField] private int mCurrentProgress = 0;
 
     public List<LineOfDialog> FullChatExposed = new();
 
@@ -11,7 +13,6 @@ public class ChoiceDialogManager : MonoBehaviour
     private readonly Dictionary<string, Sprite> IconDictionary = new();
 
     private string mCurrentKey = null;
-    private int mCurrentProgress = 0;
 
     void Awake()
     {
@@ -32,7 +33,7 @@ public class ChoiceDialogManager : MonoBehaviour
         }
     }
 
-    public void StartChat(string from, string type)
+    public void StartChat(string from, string type, int progress = 0)
     {
         mCurrentKey = from + "_" + type;
 
@@ -41,7 +42,7 @@ public class ChoiceDialogManager : MonoBehaviour
             GlobalGameData.playerController.DisableMovement();
             mChatBox.EnableChat();
 
-            mCurrentProgress = 0;
+            mCurrentProgress = progress;
 
             ProgressChat();
         }
@@ -57,31 +58,37 @@ public class ChoiceDialogManager : MonoBehaviour
         {
             // need to press next button again to proceed
         }
-        else if (mCurrentProgress < FullChat[mCurrentKey].Count - 2)
+        else
         {
-            FullChat[mCurrentKey][mCurrentProgress].FunctionToInvoke?.Invoke(false, 0);
-            ProgressChat();
-        }
-        else if (mCurrentProgress == FullChat[mCurrentKey].Count - 1)
-        {
-            if (FullChat[mCurrentKey][mCurrentProgress].Text == "" &&
-                FullChat[mCurrentKey][mCurrentProgress].Speaker == "")
+            FullChat[mCurrentKey][mCurrentProgress++].FunctionToInvoke?.Invoke(false, 0);
+
+            if (mCurrentProgress < FullChat[mCurrentKey].Count - 1)
             {
-                EndChat();
+                ProgressChat();
+            }
+            else if (mCurrentProgress < FullChat[mCurrentKey].Count)
+            {
+                if (FullChat[mCurrentKey][mCurrentProgress].Text == "" &&
+                    FullChat[mCurrentKey][mCurrentProgress].Speaker == "")
+                {
+                    var func = FullChat[mCurrentKey][mCurrentProgress].FunctionToInvoke;
+                    EndChat();
+                    func?.Invoke(false, 0);
+                }
+                else
+                {
+                    mChatBox.SetChoiceText(
+                        FullChat[mCurrentKey][mCurrentProgress].Speaker,
+                        FullChat[mCurrentKey][mCurrentProgress].Text
+                    );
+
+                    mChatBox.EnableChoice();
+                }
             }
             else
             {
-                mChatBox.SetChoiceText(
-                    FullChat[mCurrentKey][mCurrentProgress].Speaker,
-                    FullChat[mCurrentKey][mCurrentProgress].Text
-                );
-
-                mChatBox.EnableChoice();
+                EndChat();
             }
-        }
-        else
-        {
-            EndChat();
         }
     }
 
@@ -109,7 +116,7 @@ public class ChoiceDialogManager : MonoBehaviour
 
     private void ProgressChat()
     {
-        Dialog d = FullChat[mCurrentKey][mCurrentProgress++];
+        Dialog d = FullChat[mCurrentKey][mCurrentProgress];
 
         mChatBox.SetSpeaker(IconDictionary[d.Speaker], d.Speaker);
         mChatBox.SetText(d.Text);

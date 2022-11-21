@@ -43,7 +43,7 @@ public class ChoiceChatbox : MonoBehaviour
 
     public void DisableChat()
     {
-        backGround.gameObject.SetActive(true);
+        backGround.gameObject.SetActive(false);
     }
 
     public void EnableChoice()
@@ -54,8 +54,8 @@ public class ChoiceChatbox : MonoBehaviour
 
     public void DisableChoice()
     {
-        nextButton.gameObject.SetActive(true);
         choiceObject.gameObject.SetActive(false);
+        nextButton.gameObject.SetActive(true);
     }
 
     public void SetChoiceText(string oneText, string twoText)

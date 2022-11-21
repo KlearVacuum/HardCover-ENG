@@ -224,7 +224,19 @@ MonoBehaviour:
         back to whatever hole you came from!"
       FunctionToInvoke:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: TempScript, Assembly-CSharp
+            m_MethodName: GetFired
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   - Key: Larry_BeforeWork
     Value:
     - Speaker: Larry
@@ -332,4 +344,126 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mChatBox: {fileID: 0}
-  FullChatExposed: []
+  mCurrentProgress: 0
+  FullChatExposed:
+  - Key: Ting Hoon_ProposeMarriage
+    Value:
+    - Speaker: Ting Hoon
+      Text: You smart
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+    - Speaker: Ting Hoon
+      Text: I want you
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+    - Speaker: Ting Hoon
+      Text: Want me?
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+    - Speaker: Yes
+      Text: No
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: TempScript, Assembly-CSharp
+            m_MethodName: MarriageDecision
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - Key: Ting Hoon_Convo
+    Value:
+    - Speaker: Ting Hoon
+      Text: How things?
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+    - Speaker: Good
+      Text: Bad
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ting Hoon_Convo_1
+    Value:
+    - Speaker: Amanda
+      Text: Yeah things are grea!
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+    - Speaker: Amanda
+      Text: How is profits?
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+    - Speaker: Good
+      Text: Bad
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ting Hoon_Convo_1_1
+    Value:
+    - Speaker: Ting Hoon
+      Text: Good profits
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+    - Speaker: Ting Hoon
+      Text: Bye
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+    - Speaker: 
+      Text: 
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ting Hoon_Convo_1_2
+    Value:
+    - Speaker: Ting Hoon
+      Text: Bad Profits
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+    - Speaker: Ting Hoon
+      Text: Okay bye
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+    - Speaker: 
+      Text: 
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+  - Key: Ting Hoon_Convo_2
+    Value:
+    - Speaker: Amanda
+      Text: Horrible
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls: []
+    - Speaker: 
+      Text: 
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: TempScript, Assembly-CSharp
+            m_MethodName: GoTo
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2

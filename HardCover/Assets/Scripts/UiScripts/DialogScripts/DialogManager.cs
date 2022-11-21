@@ -78,14 +78,18 @@ public class DialogManager : MonoBehaviour
         {
             // need to press next button again to proceed
         }
-        else if (mCurrentProgress < FullChat[mCurrentKey].Count - 1)
-        {
-            FullChat[mCurrentKey][mCurrentProgress].FunctionToInvoke?.Invoke(false, 0);
-            ProgressChat();
-        }
         else
         {
-            EndChat();
+            FullChat[mCurrentKey][mCurrentProgress++].FunctionToInvoke?.Invoke(false, 0);
+
+            if (mCurrentProgress < FullChat[mCurrentKey].Count)
+            {
+                ProgressChat();
+            }
+            else
+            {
+                EndChat();
+            }
         }
     }
 
@@ -97,7 +101,7 @@ public class DialogManager : MonoBehaviour
 
     private void ProgressChat()
     {
-        Dialog d = FullChat[mCurrentKey][mCurrentProgress++];
+        Dialog d = FullChat[mCurrentKey][mCurrentProgress];
 
         mChatBox.SetSpeaker(IconDictionary[d.Speaker], d.Speaker);
         mChatBox.SetText(d.Text);

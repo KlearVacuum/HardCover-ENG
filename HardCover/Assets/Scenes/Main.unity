@@ -6105,9 +6105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f5b1350fb8c30a49ae1241f9a3f77d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speaker: Amanda
-  Key: 25
+  Speaker: Ting Hoon
+  Key: ProposeMarriage
   TriggerDialog: 0
+  TriggerChoicedDialog: 0
 --- !u!1 &577885568
 GameObject:
   m_ObjectHideFlags: 0
@@ -19810,10 +19811,22 @@ PrefabInstance:
       propertyPath: mChatBox
       value: 
       objectReference: {fileID: 137347071}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[3].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 568656699}
+    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[5].Value.Array.data[1].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 568656699}
     - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
       propertyPath: mChatBox
       value: 
       objectReference: {fileID: 275253204}
+    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
+      propertyPath: FullChatExposed.Array.data[18].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 568656699}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
 --- !u!114 &4137564787886018867 stripped
