@@ -91,7 +91,6 @@ public class DialogManager : MonoBehaviour
 
     public void EndChat()
     {
-        Debug.Log("Chat Ended");
         mChatBox.DisableChat();
         GlobalGameData.playerController.EnableMovement();
     }
@@ -102,7 +101,5 @@ public class DialogManager : MonoBehaviour
 
         mChatBox.SetSpeaker(IconDictionary[d.Speaker], d.Speaker);
         mChatBox.SetText(d.Text);
-
-        Debug.Log("Chat Progressed " + mCurrentProgress + " Out of: " + FullChat[mCurrentKey].Count);
     }
 }

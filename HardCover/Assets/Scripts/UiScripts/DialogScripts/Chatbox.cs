@@ -38,6 +38,6 @@ public class Chatbox : MonoBehaviour
 
     public void DisableChat()
     {
-        backGround.gameObject.SetActive(true);
+        backGround.gameObject.SetActive(false);
     }
 }
