@@ -3,7 +3,7 @@
 public class Bed : MonoBehaviour, IInteractableAndActionable
 {
     public int EnergyRecoveryPerHour = 5;
-    public int WakeUpTime = 5; // 5am Wakeup time
+    public int WakeUpTime = DayNightCycleManager.WakeUpTime; // 5am Wakeup time
     public int OverSleepTime = 3;
 
     public GameObject Orientation;

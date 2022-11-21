@@ -14,6 +14,11 @@ public class DayNightCycleManager : MonoBehaviour
     private int mTime = 0;
     private int mDay = 0;
 
+    public static int WakeUpTime = 6;
+    public static int WorkStartTime = 6;
+    public static int WorkEndTime = 18;
+    public static int SleepTime = 22;
+
     private static readonly Dictionary<int, string> dayNameMap
         = new Dictionary<int, string>()
         {
@@ -82,7 +87,7 @@ public class DayNightCycleManager : MonoBehaviour
         return timeToAdd;
     }
 
-// Returns how many hours it was
+    // Returns how many hours it was
     public int AddTimeUntil(int timeToAddUntil)
     {
         int timeAdded = HoursLeftTill(timeToAddUntil);
@@ -116,6 +121,24 @@ public class DayNightCycleManager : MonoBehaviour
     public string GetDayName()
     {
         return dayNameMap[mDay];
+    }
+
+    public bool IsBeforeWork()
+    {
+        return mDay % 7 != 0 &&
+               (mTime >= SleepTime || mTime < WorkStartTime);
+    }
+
+    public bool IsDuringWork()
+    {
+        return mDay % 7 != 0 &&
+               (mTime >= WorkStartTime || mTime < WorkEndTime);
+    }
+
+    public bool IsAfterWork()
+    {
+        return mDay % 7 != 0 &&
+               (mTime >= WorkEndTime || mTime < SleepTime);
     }
 
     private void UpdateUi()
