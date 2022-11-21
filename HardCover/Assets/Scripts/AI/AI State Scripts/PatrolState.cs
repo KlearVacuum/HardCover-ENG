@@ -17,6 +17,10 @@ public class PatrolState : AIState
     public override void StartState(AIStateManager stateManager)
     {
         // PrintMessage("start patrol: go to index " + stateManager.ai.patrolIndex);
+        while(stateManager.ai.patrolIndex > stateManager.ai.activePatrol.patrolPoints.Count)
+        {
+            stateManager.ai.patrolIndex -= stateManager.ai.activePatrol.patrolPoints.Count;
+        }
         stateManager.ai.currentCoroutine = stateManager.ai.currentCoroutine.StartCoroutine(stateManager.ai, GoToPatrolPoint(stateManager));
         stateManager.ai.canTransit = false;
     }

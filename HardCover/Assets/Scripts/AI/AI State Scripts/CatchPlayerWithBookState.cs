@@ -8,7 +8,7 @@ public class CatchPlayerWithBookState : AIState
     public override bool EvaluateConditions(AIStateManager stateManager)
     {
         // check if player is in sight, and player is holding a book
-        return stateManager.ai.PlayerInSight() && stateManager.ai.PlayerHasBook();
+        return stateManager.ai.catchPlayer;
     }
 
     public override void StartState(AIStateManager stateManager)

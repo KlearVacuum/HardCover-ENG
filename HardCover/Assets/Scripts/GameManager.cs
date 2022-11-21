@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private UIFade blackScreenOverlay;
-
     private void Awake()
     {
-        blackScreenOverlay = FindObjectOfType<UIFade>();
+        GlobalGameData.blackScreenOverlay = FindObjectOfType<UIFade>();
     }
     private void Start()
     {
-        blackScreenOverlay.FadeOut();
+        GlobalGameData.blackScreenOverlay.FadeOut(0.5f);
     }
     void Update()
     {

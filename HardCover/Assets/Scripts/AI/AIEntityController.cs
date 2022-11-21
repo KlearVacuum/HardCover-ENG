@@ -18,12 +18,14 @@ public class AIEntityController : MonoBehaviour
     private float currentTravelTime;
     public float moveForce;
     public float maxSpeed;
+    private float currentMaxSpeed;
     [HideInInspector] public bool climbStairs;
     [HideInInspector] public int patrolIndex;
     [HideInInspector] public PatrolData activePatrol;
 
     [Header("Vision Info")]
     public float viewRange;
+    public bool catchPlayer;
 
     bool flipped;
     float startingScale;
@@ -63,6 +65,9 @@ public class AIEntityController : MonoBehaviour
         currentFacingDir = Vector2.right;
         flipped = false;
         startingScale = transform.localScale.x;
+        catchPlayer = false;
+
+        currentMaxSpeed = maxSpeed;
     }
 
     void Update()
@@ -71,6 +76,12 @@ public class AIEntityController : MonoBehaviour
         if (actionDuration > 0)
         {
             actionDuration -= Time.deltaTime;
+        }
+
+        if (!catchPlayer && PlayerInSight() && PlayerHasBook())
+        {
+            canTransit = true;
+            catchPlayer = true;
         }
     }
     private void FixedUpdate()
@@ -96,7 +107,7 @@ public class AIEntityController : MonoBehaviour
 
         Debug.DrawLine(transform.position, (Vector2)transform.position + moveVect, Color.green);
         rb.AddForce(moveVect * Time.fixedDeltaTime * moveForce * rb.mass);
-        if (rb.velocity.magnitude > maxSpeed) rb.velocity = moveVect * maxSpeed;
+        if (rb.velocity.magnitude > currentMaxSpeed) rb.velocity = moveVect * currentMaxSpeed;
     }
 
     public Portal GetClosestStairs(Vector2 pos, float radius)
@@ -138,6 +149,13 @@ public class AIEntityController : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public void TeleportToPatrolPoint()
+    {
+        Vector2 patrolPoint = activePatrol.patrolPoints[Mathf.Clamp(patrolIndex, 0, activePatrol.patrolPoints.Count - 1)].position
+                                                                            + new Vector3(Random.Range(-0.5f, 0.5f), 0, 0);
+        transform.position = new Vector3(patrolPoint.x, transform.position.y, transform.position.z);
     }
 
     public void SetTravelTime(float travelTime)
@@ -285,23 +303,44 @@ public class AIEntityController : MonoBehaviour
 
     public IEnumerator CatchPlayerCoroutine()
     {
-        // start dialogue about catching player
         Debug.Log("caught player with book!");
+        GlobalGameData.playerController.DisableMovement();
+        foreach (var npc in GlobalGameData.allNPCs)
+        {
+            npc.currentMaxSpeed = 0;
+            npc.StopMoving();
+        }
+
+        // trigger dialogue
+        // wait for player to press "bribe" (continue)
         yield return new WaitForSeconds(1f);
-        // player pays the bribe
+
         Debug.Log("player pays a fine");
+        GlobalGameData.playerStats.PayBribe();
         yield return new WaitForSeconds(1f);
+
         // screen fades to black
-        Debug.Log("screen fades to black");
-        yield return new WaitForSeconds(1f);
+        GlobalGameData.blackScreenOverlay.FadeIn(0, false);
+        yield return new WaitForSeconds(1.5f);
+
         // time skip
         Debug.Log("time skip");
+        GlobalGameData.playerStats.PenaltyTimeskip();
+        foreach (var npc in GlobalGameData.allNPCs) npc.TeleportToPatrolPoint();
         yield return new WaitForSeconds(1f);
+
+
+        GlobalGameData.blackScreenOverlay.FadeOut(0.5f);
         // screen fades back to normal
         Debug.Log("screen is fading back");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
+
+        foreach (var npc in GlobalGameData.allNPCs) npc.currentMaxSpeed = maxSpeed;
+        catchPlayer = false;
+
         // game resumes
         Debug.Log("resume game");
+        GlobalGameData.playerController.EnableMovement();
 
     }
 }

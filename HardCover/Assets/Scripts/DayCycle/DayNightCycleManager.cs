@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -86,8 +87,22 @@ public class DayNightCycleManager : MonoBehaviour
     public int AddTimeUntil(int timeToAddUntil)
     {
         int timeAdded = HoursLeftTill(timeToAddUntil);
-        AddTime(timeAdded);
+        StartCoroutine(TimeSkipCoroutine(timeAdded));
         return timeAdded;
+    }
+
+    IEnumerator TimeSkipCoroutine(int timeAdded)
+    {
+        GlobalGameData.blackScreenOverlay.FadeIn(0.5f, false);
+        GlobalGameData.playerController.DisableMovement();
+        yield return new WaitForSeconds(2f);
+
+        foreach (var npc in GlobalGameData.allNPCs) npc.TeleportToPatrolPoint();
+        AddTime(timeAdded);
+        GlobalGameData.blackScreenOverlay.FadeOut(0.5f);
+        yield return new WaitForSeconds(1.5f);
+
+        GlobalGameData.playerController.EnableMovement();
     }
 
     public void AddTime(int hours = 1)

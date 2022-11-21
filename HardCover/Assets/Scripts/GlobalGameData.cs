@@ -8,6 +8,7 @@ public static class GlobalGameData
     public static DayNightCycleManager timeManager;
     public static DialogManager dialogManager;
     public static ChoiceDialogManager choiceDialogManager;
+    public static UIFade blackScreenOverlay;
     public static float portalCooldown;
 
     public static List<AIEntityController> allNPCs = new List<AIEntityController>();
@@ -19,6 +20,7 @@ public static class GlobalGameData
         playerController = null;
         dialogManager = null;
         choiceDialogManager = null;
+        blackScreenOverlay = null;
 
         portalCooldown = 0;
         allNPCs.Clear();
