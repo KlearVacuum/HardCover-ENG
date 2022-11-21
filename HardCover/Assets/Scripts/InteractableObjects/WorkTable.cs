@@ -2,8 +2,8 @@
 
 public class WorkTable : MonoBehaviour, IInteractableAndActionable
 {
-    public int WorkTimeStart = 6; // Work starts 6am
-    public int WorkTimeEnd = 18; // Work ends 6pm
+    public int WorkTimeStart = DayNightCycleManager.WorkStartTime; // Work starts 6am
+    public int WorkTimeEnd = DayNightCycleManager.WorkEndTime; // Work ends 6pm
 
     public int EnergyPerHour = 4; // 4% energy cost
     public int IncomePerHour = 1; // $1

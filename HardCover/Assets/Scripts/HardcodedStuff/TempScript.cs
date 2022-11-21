@@ -31,7 +31,7 @@ public class TempScript : MonoBehaviour
         {
             if (choice == 1)
             {
-                Debug.Log("GET MARRIED OFF");
+                GlobalGameData.blackScreenOverlay.GoToScene("End_Marry");
             }
             else if (choice == 2)
             {
@@ -42,11 +42,6 @@ public class TempScript : MonoBehaviour
 
     public void GetFired(bool choiced, int choice)
     {
-        Debug.Log("TRIGGER FIRED CUTSCENE");
-    }
-
-    public void GoTo()
-    {
-        GlobalGameData.choiceDialogManager.StartChat("Ting Hoon", "Convo_1", 1);
+        GlobalGameData.blackScreenOverlay.GoToScene("End_Fired");
     }
 }

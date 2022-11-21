@@ -73,6 +73,22 @@ public class PlayerStats : MonoBehaviour
         value = mKnowledge - initKnowledge;
         knowledgeUI.text = $"{mKnowledge}%";
 
+        switch (mKnowledge)
+        {
+            case 100:
+                GlobalGameData.dialogManager.StartChat("Amanda", "100");
+                break;
+            case 75:
+                GlobalGameData.dialogManager.StartChat("Amanda", "75");
+                break;
+            case 50:
+                GlobalGameData.dialogManager.StartChat("Amanda", "50");
+                break;
+            case 25:
+                GlobalGameData.dialogManager.StartChat("Amanda", "25");
+                break;
+        }
+
         if (!pop)
         {
             return;
@@ -95,6 +111,11 @@ public class PlayerStats : MonoBehaviour
         value = mEnergy - initEnergy;
         energyUI.text = $"{mEnergy}%";
 
+        if (mEnergy == 0)
+        {
+            GlobalGameData.dialogManager.StartChat("Amanda", "LowEnergy");
+        }
+
         if (!pop)
         {
             return;
@@ -116,6 +137,11 @@ public class PlayerStats : MonoBehaviour
         mCash = Mathf.Max(mCash + value, 0);
         value = mCash - initCash;
         cashUI.text = $"{mCash}";
+
+        if (mCash <= 50)
+        {
+            GlobalGameData.dialogManager.StartChat("Amanda", "LowMoney");
+        }
 
         if (!pop)
         {

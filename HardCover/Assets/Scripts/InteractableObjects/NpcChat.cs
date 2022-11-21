@@ -8,9 +8,17 @@ public class NpcChat : MonoBehaviour, IInteractable
 
     public void StartInteraction(GameObject interactor)
     {
-        if (true)
+        if (GlobalGameData.timeManager.IsBeforeWork())
         {
-            GlobalGameData.dialogManager.StartChat(npcName, "Default");
+            GlobalGameData.dialogManager.StartChat(npcName, "BeforeWork");
+        }
+        else if (GlobalGameData.timeManager.IsDuringWork())
+        {
+            GlobalGameData.dialogManager.StartChat(npcName, "DuringWork");
+        }
+        else if (GlobalGameData.timeManager.IsAfterWork())
+        {
+            GlobalGameData.dialogManager.StartChat(npcName, "AfterWork");
         }
     }
 

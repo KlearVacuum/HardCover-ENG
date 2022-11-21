@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -21,9 +22,9 @@ public class UIFade : MonoBehaviour
         StartCoroutine(WaitThenFadeInOverSeconds(delay, 1.5f, changeScene));
     }
 
-    public void FadeOut(float delay = 0)
+    public void FadeOut(float delay = 0, UnityAction action = null)
     {
-        StartCoroutine(WaitThenFadeOutOverSeconds(delay, 1.5f));
+        StartCoroutine(WaitThenFadeOutOverSeconds(delay, 1.5f, action));
     }
 
     public void GoToScene(string sceneName)
@@ -43,9 +44,11 @@ public class UIFade : MonoBehaviour
             if (newAlpha >= 1) break;
             yield return null;
         }
+
         if (changeScene) SceneManager.LoadScene(nextLevel);
-    }    
-    IEnumerator WaitThenFadeOutOverSeconds(float waitTime, float fadeSpeed)
+    }
+
+    IEnumerator WaitThenFadeOutOverSeconds(float waitTime, float fadeSpeed, UnityAction action)
     {
         yield return new WaitForSeconds(waitTime);
 
@@ -56,5 +59,7 @@ public class UIFade : MonoBehaviour
             if (newAlpha <= 0) break;
             yield return null;
         }
+
+        action?.Invoke();
     }
 }
