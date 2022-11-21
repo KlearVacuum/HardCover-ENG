@@ -119,6 +119,14 @@ public class DayNightCycleManager : MonoBehaviour
             ++mDay;
         }
 
+        if (mDay == 15 && mTime == 6)
+        {
+            if (!GlobalGameData.playerStats.CanPassUni())
+            {
+                GlobalGameData.blackScreenOverlay.GoToScene("End_UniFail");
+            }
+        }
+
         foreach (var npc in GlobalGameData.allNPCs) npc.canTransit = true;
         UpdateUi();
     }

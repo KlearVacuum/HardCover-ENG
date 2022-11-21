@@ -4,11 +4,9 @@ public class University : MonoBehaviour, IInteractable
 {
     public void StartInteraction(GameObject interactor)
     {
-        //Check if interactor is player
-        //Check interactor stats
-        if (true)
+        if (GlobalGameData.playerStats.CanPassUni())
         {
-            Debug.Log("Game Ends");
+            GlobalGameData.blackScreenOverlay.GoToScene("End_UniSuccess");
         }
     }
 

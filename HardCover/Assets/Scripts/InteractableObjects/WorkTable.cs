@@ -11,6 +11,10 @@ public class WorkTable : MonoBehaviour, IInteractableAndActionable
     private bool isInteracting;
 
     private int mHoursSkipped = 0;
+    private bool m12Trigger = false;
+    private bool m24Trigger = false;
+    private bool m36Trigger = false;
+    private bool mMarryTrigger = false;
 
     public void StartInteraction(GameObject interactor)
     {
@@ -52,6 +56,28 @@ public class WorkTable : MonoBehaviour, IInteractableAndActionable
         else
         {
             Debug.Log("Not Working Hours");
+        }
+
+        if (mHoursSkipped >= 36 && !m36Trigger)
+        {
+            m36Trigger = true;
+            GlobalGameData.dialogManager.StartChat("Ting Hoon", "AmandaSkipWork36");
+        }
+        else if (mHoursSkipped >= 24 && !m24Trigger)
+        {
+            m24Trigger = true;
+            GlobalGameData.dialogManager.StartChat("Ting Hoon", "AmandaSkipWork24");
+        }
+        else if (mHoursSkipped >= 12 && !m12Trigger)
+        {
+            m12Trigger = true;
+            GlobalGameData.dialogManager.StartChat("Ting Hoon", "AmandaSkipWork12");
+        }
+
+        if (GlobalGameData.playerStats.knowledge > 50 && !mMarryTrigger)
+        {
+            mMarryTrigger = true;
+            GlobalGameData.choiceDialogManager.StartChat("Ting Hoon", "ProposeMarriage");
         }
     }
 

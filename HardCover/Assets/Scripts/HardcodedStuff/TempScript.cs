@@ -35,6 +35,7 @@ public class TempScript : MonoBehaviour
             }
             else if (choice == 2)
             {
+                //STRONG INDEPENDENT WOMAN
             }
         }
     }

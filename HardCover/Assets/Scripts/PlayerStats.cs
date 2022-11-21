@@ -175,6 +175,11 @@ public class PlayerStats : MonoBehaviour
         progressBar.fillAmount = val;
     }
 
+    public bool CanPassUni()
+    {
+        return mKnowledge == 100 && mEnergy > 60 && mCash >= 200;
+    }
+
     public bool TryPurchase(int cost, bool pop = true)
     {
         if (mCash >= cost)
