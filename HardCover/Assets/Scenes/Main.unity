@@ -20992,10 +20992,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Amanda
       objectReference: {fileID: 0}
-    - target: {fileID: 8036997961900651807, guid: 9229a6eae3dae844c921b94eaf3b88be, type: 3}
-      propertyPath: maxMoveForce
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9229a6eae3dae844c921b94eaf3b88be, type: 3}
 --- !u!61 &8381085918687808333

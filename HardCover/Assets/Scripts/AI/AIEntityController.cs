@@ -311,11 +311,11 @@ public class AIEntityController : MonoBehaviour
             npc.StopMoving();
         }
 
-        // trigger dialogue
-        // wait for player to press "bribe" (continue)
+        // TRIGGER DIALOGUE
+        // WAIT FOR PLAYER TO PRESS "BRIBE" (CONTINUE)
         yield return new WaitForSeconds(1f);
 
-        Debug.Log("player pays a fine");
+        // Debug.Log("player pays a fine");
         GlobalGameData.playerStats.PayBribe();
         yield return new WaitForSeconds(1f);
 
@@ -324,22 +324,22 @@ public class AIEntityController : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         // time skip
-        Debug.Log("time skip");
+        // Debug.Log("time skip");
         GlobalGameData.playerStats.PenaltyTimeskip();
         foreach (var npc in GlobalGameData.allNPCs) npc.TeleportToPatrolPoint();
-        yield return new WaitForSeconds(1f);
 
 
-        GlobalGameData.blackScreenOverlay.FadeOut(0.5f);
         // screen fades back to normal
-        Debug.Log("screen is fading back");
+        // Debug.Log("screen is fading back");
+        GlobalGameData.blackScreenOverlay.FadeOut(0.5f);
         yield return new WaitForSeconds(1.5f);
 
         foreach (var npc in GlobalGameData.allNPCs) npc.currentMaxSpeed = maxSpeed;
         catchPlayer = false;
+        // PLAYER DROPS BOOK (BACK IN SHELF?)
 
         // game resumes
-        Debug.Log("resume game");
+        // Debug.Log("resume game");
         GlobalGameData.playerController.EnableMovement();
 
     }
