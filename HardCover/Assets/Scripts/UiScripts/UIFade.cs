@@ -26,6 +26,12 @@ public class UIFade : MonoBehaviour
         StartCoroutine(WaitThenFadeOutOverSeconds(delay, 1.5f));
     }
 
+    public void GoToScene(string sceneName)
+    {
+        nextLevel = sceneName;
+        FadeIn(0.5f, true);
+    }
+
     IEnumerator WaitThenFadeInOverSeconds(float waitTime, float fadeSpeed, bool changeScene = false)
     {
         yield return new WaitForSeconds(waitTime);

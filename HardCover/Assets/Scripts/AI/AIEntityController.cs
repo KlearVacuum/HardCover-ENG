@@ -328,7 +328,6 @@ public class AIEntityController : MonoBehaviour
         GlobalGameData.playerStats.PenaltyTimeskip();
         foreach (var npc in GlobalGameData.allNPCs) npc.TeleportToPatrolPoint();
 
-
         // screen fades back to normal
         // Debug.Log("screen is fading back");
         GlobalGameData.blackScreenOverlay.FadeOut(0.5f);
