@@ -102,11 +102,11 @@ public class PlayerStats : MonoBehaviour
 
         if (value >= 0)
         {
-            GlobalGameData.PopInPopOutValue(transform.position, $"+{value}E", StatAdjustColors.EnergyIncrease);
+            GlobalGameData.PopInPopOutValue(transform.position, $"+{value} Energy", StatAdjustColors.EnergyIncrease);
         }
         else
         {
-            GlobalGameData.PopInPopOutValue(transform.position, $"{value}E", StatAdjustColors.EnergyDecrease);
+            GlobalGameData.PopInPopOutValue(transform.position, $"{value} Energy", StatAdjustColors.EnergyDecrease);
         }
     }
 
