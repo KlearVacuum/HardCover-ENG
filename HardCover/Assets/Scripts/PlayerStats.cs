@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -174,9 +176,13 @@ public class PlayerStats : MonoBehaviour
         return false;
     }
 
-    public void TriggerPenalty()
+    public void PayBribe()
     {
         AdjustCash(-8);
+    }
+
+    public void PenaltyTimeskip()
+    {
         int time = GlobalGameData.timeManager.GetTime();
 
         if (time > 18 || time < 5) // Time skip to 5am

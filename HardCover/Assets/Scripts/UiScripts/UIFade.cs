@@ -16,22 +16,23 @@ public class UIFade : MonoBehaviour
         image.color = new Color(image.color.r, image.color.g, image.color.b, 1);
     }
 
-    public void FadeInDelay(float seconds)
+    public void FadeIn(float delay = 0, bool changeScene = false)
     {
-
+        StartCoroutine(WaitThenFadeInOverSeconds(delay, 1.5f, changeScene));
     }
 
-    public void FadeIn(float delay = 0)
+    public void FadeOut(float delay = 0)
     {
-        StartCoroutine(WaitThenFadeInOverSeconds(delay, 1.5f));
+        StartCoroutine(WaitThenFadeOutOverSeconds(delay, 1.5f));
     }
 
-    public void FadeOut()
+    public void GoToScene(string sceneName)
     {
-        StartCoroutine(WaitThenFadeOutOverSeconds(0.5f, 1.5f));
+        nextLevel = sceneName;
+        FadeIn(0.5f, true);
     }
 
-    IEnumerator WaitThenFadeInOverSeconds(float waitTime, float fadeSpeed)
+    IEnumerator WaitThenFadeInOverSeconds(float waitTime, float fadeSpeed, bool changeScene = false)
     {
         yield return new WaitForSeconds(waitTime);
 
@@ -42,7 +43,7 @@ public class UIFade : MonoBehaviour
             if (newAlpha >= 1) break;
             yield return null;
         }
-        SceneManager.LoadScene(nextLevel);
+        if (changeScene) SceneManager.LoadScene(nextLevel);
     }    
     IEnumerator WaitThenFadeOutOverSeconds(float waitTime, float fadeSpeed)
     {
