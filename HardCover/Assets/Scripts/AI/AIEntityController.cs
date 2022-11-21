@@ -297,6 +297,16 @@ public class AIEntityController : MonoBehaviour
         // player is not on the same level
         Vector2 diff = transform.position - GlobalGameData.playerStats.transform.position;
         if (Mathf.Abs(diff.y) > 1f) return false;
+
+        // facing right
+        if (transform.localScale.x > 0)
+        {
+            if (GlobalGameData.playerStats.transform.position.x < transform.position.x) return false;
+        }
+        else
+        {
+            if (GlobalGameData.playerStats.transform.position.x > transform.position.x) return false;
+        }
         return diff.magnitude < viewRange;
     }
 
