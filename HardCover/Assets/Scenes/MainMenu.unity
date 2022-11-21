@@ -160,7 +160,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.122641504, g: 0.10204502, b: 0.09660911, a: 0}
+  m_BackGroundColor: {r: 0.3679245, g: 0.29705855, b: 0.28288534, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -404,11 +404,11 @@ RectTransform:
   m_Father: {fileID: 178216151}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 250, y: 50}
-  m_Pivot: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -75}
+  m_SizeDelta: {x: 200, y: 75}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &738734482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,7 +455,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1826020475}
         m_TargetAssemblyTypeName: EndController, Assembly-CSharp
-        m_MethodName: GoToMainMenu
+        m_MethodName: GoToGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: To Main Menu
+  m_text: Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
@@ -588,8 +588,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Successfully entered University
+  m_text: Hard Cover
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
@@ -910,7 +910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 20}
+  m_AnchoredPosition: {x: 0, y: 30}
   m_SizeDelta: {x: 800, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1745962139
@@ -933,13 +933,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Amanda made it into the University, and proceeded to graduate and pursue
-    a successful career with her degree. But Amanda is one of the lucky ones. \r\n\r\nIn
-    the 1900s, only 58% of colleges and universities allowed women to enroll at all.
-    Today, after much resilience towards change, the ratio of men and women enrolled
-    in educational institutions is almost equal. However, many women around the world
-    still lack the opportunities to improve their lives due to discrimination of
-    their gender. \r\n"
+  m_text: 'Experience Amanda''s story. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
@@ -973,7 +967,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

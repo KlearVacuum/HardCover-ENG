@@ -5,7 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Main.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    guid: dcd7b6b711d629947a1814d75c066d2e
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: e903f45bac64b9a4ead11e5fb2321c03
+  - enabled: 1
+    path: Assets/Scenes/End_UniSuccess.unity
+    guid: 14d7bab21d1e8a444aff86b58d9e38ea
+  - enabled: 1
+    path: Assets/Scenes/End_UniFail.unity
+    guid: a3903e6bdd375f8489d09b395974ad80
+  - enabled: 1
+    path: Assets/Scenes/End_Marry.unity
+    guid: f1b5ef9c9c916864b8d47d4386d2de9b
+  - enabled: 1
+    path: Assets/Scenes/End_Fired.unity
+    guid: 9d944ad4d5ddb5f4b988b574d2842491
   m_configObjects: {}
