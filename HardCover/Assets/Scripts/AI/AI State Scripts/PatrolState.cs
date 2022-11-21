@@ -35,7 +35,8 @@ public class PatrolState : AIState
     IEnumerator GoToPatrolPoint(AIStateManager stateManager)
     {
         // PrintMessage("start moving coroutine");
-        Vector2 patrolPoint = stateManager.ai.activePatrol.patrolPoints[stateManager.ai.patrolIndex].position + new Vector3(Random.Range(-0.5f, 0.5f),0,0);
+        Vector2 patrolPoint = stateManager.ai.activePatrol.patrolPoints[Mathf.Clamp(stateManager.ai.patrolIndex, 0, stateManager.ai.activePatrol.patrolPoints.Count - 1)].position 
+                                                                            + new Vector3(Random.Range(-0.5f, 0.5f),0,0);
         Portal closestStairs = null;
         float distance = float.MaxValue;
 

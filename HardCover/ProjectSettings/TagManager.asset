@@ -43,6 +43,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Sky Beyond
+    uniqueID: 1023457045
+    locked: 0
+  - name: Parallax Env Back
+    uniqueID: 1304737747
+    locked: 0
+  - name: Parallax Env Mid
+    uniqueID: 2370693717
+    locked: 0
+  - name: Parallax Env Front
+    uniqueID: 1716835157
+    locked: 0
+  - name: SideBackground
+    uniqueID: 1162923743
+    locked: 0
   - name: Background
     uniqueID: 3737352543
     locked: 0
