@@ -18,7 +18,7 @@ public class AIEntityController : MonoBehaviour
     private float currentTravelTime;
     public float moveForce;
     public float maxSpeed;
-    private float currentMaxSpeed;
+    [HideInInspector] public float currentMaxSpeed;
     [HideInInspector] public bool climbStairs;
     [HideInInspector] public int patrolIndex;
     [HideInInspector] public PatrolData activePatrol;
@@ -313,43 +313,18 @@ public class AIEntityController : MonoBehaviour
 
     public IEnumerator CatchPlayerCoroutine()
     {
-        Debug.Log("caught player with book!");
-        GlobalGameData.playerController.DisableMovement();
+        // Debug.Log("caught player with book!");
+        //GlobalGameData.playerController.DisableMovement();
+
+        string npcName = GetComponent<NpcChat>().npcName;
+        GlobalGameData.dialogManager.StartChat(npcName, "CatchAmanda0");
+
         foreach (var npc in GlobalGameData.allNPCs)
         {
             npc.currentMaxSpeed = 0;
             npc.StopMoving();
         }
 
-        // TRIGGER DIALOGUE
-        // WAIT FOR PLAYER TO PRESS "BRIBE" (CONTINUE)
-        yield return new WaitForSeconds(1f);
-
-        // Debug.Log("player pays a fine");
-        GlobalGameData.playerStats.PayBribe();
-        yield return new WaitForSeconds(1f);
-
-        // screen fades to black
-        GlobalGameData.blackScreenOverlay.FadeIn(0, false);
-        yield return new WaitForSeconds(1.5f);
-
-        // time skip
-        // Debug.Log("time skip");
-        GlobalGameData.playerStats.PenaltyTimeskip();
-        foreach (var npc in GlobalGameData.allNPCs) npc.TeleportToPatrolPoint();
-
-        // screen fades back to normal
-        // Debug.Log("screen is fading back");
-        GlobalGameData.blackScreenOverlay.FadeOut(0.5f);
-        yield return new WaitForSeconds(1.5f);
-
-        foreach (var npc in GlobalGameData.allNPCs) npc.currentMaxSpeed = maxSpeed;
-        catchPlayer = false;
-        // PLAYER DROPS BOOK (BACK IN SHELF?)
-
-        // game resumes
-        // Debug.Log("resume game");
-        GlobalGameData.playerController.EnableMovement();
-
+        yield return new WaitForSeconds(5.0f);
     }
 }

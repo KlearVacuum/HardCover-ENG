@@ -3,6 +3,9 @@ using UnityEngine.Assertions;
 
 public class Book : MonoBehaviour, IInteractableAndActionable
 {
+    private Drawer drawer;
+    private BookShopCounter shop;
+
     public int KnowledgeToPlayer = 25;
 
     public int ProgressionPerHour = 10;
@@ -20,13 +23,19 @@ public class Book : MonoBehaviour, IInteractableAndActionable
 
     private float timePassedSinceAction;
 
+    private bool mDefaultActive;
     private Vector3 mDefaultPosition;
     private SpriteRenderer mSpriteRenderer;
+    private bool mWasDrawer = false;
 
     private void Awake()
     {
+        mDefaultActive = true;
         mDefaultPosition = transform.parent.position;
         mSpriteRenderer = GetComponent<SpriteRenderer>();
+
+        drawer = GameObject.FindObjectOfType<Drawer>();
+        shop = GameObject.FindObjectOfType<BookShopCounter>();
 
         Assert.AreNotEqual(BookVolume, 0, "Please set the book volume thanks");
     }
@@ -48,8 +57,11 @@ public class Book : MonoBehaviour, IInteractableAndActionable
                     timePassedSinceAction -= SecondsPerHour;
 
                     // Don't pop for the last tick, just show knowledge gain
-                    GlobalGameData.playerStats.AdjustEnergy(-EnergyConsumptionRatePerHour, mRemainingKnowledge > 0);
-                    GlobalGameData.timeManager.AddTime();
+                    if (GlobalGameData.playerStats.TryConsumeEnergy(EnergyConsumptionRatePerHour,
+                            mRemainingKnowledge > 0))
+                    {
+                        GlobalGameData.timeManager.AddTime();
+                    }
                 }
             }
             else
@@ -66,7 +78,28 @@ public class Book : MonoBehaviour, IInteractableAndActionable
 
     public void ResetPosition()
     {
+        EndInteraction();
+
         SetPosition(mDefaultPosition);
+        gameObject.SetActive(mDefaultActive);
+
+        if (mWasDrawer)
+        {
+            drawer.PutBook(this);
+        }
+    }
+
+    public void StoredInDrawer()
+    {
+        mDefaultPosition = drawer.transform.position;
+        mDefaultActive = false;
+        mWasDrawer = true;
+    }
+
+    public void BoughtFromShop()
+    {
+        mDefaultPosition = shop.transform.position;
+        mDefaultActive = true;
     }
 
     public void PlayerGotCaught()

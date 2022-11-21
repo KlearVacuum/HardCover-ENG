@@ -14,8 +14,15 @@ public class Drawer : MonoBehaviour, IInteractable
     public Book TakeBook(int i)
     {
         Book b = mBookList[i];
+        b.StoredInDrawer();
+
         mBookList[i] = null;
         return b;
+    }
+
+    public void PutBook(Book b)
+    {
+        mBookList[b.BookVolume - 1] = b;
     }
 
     public void StartInteraction(GameObject interactor)
@@ -26,7 +33,7 @@ public class Drawer : MonoBehaviour, IInteractable
             Book b = ii.GetObject().GetComponent<Book>();
 
             // Holding Book
-            mBookList[b.BookVolume - 1] = b;
+            PutBook(b);
 
             // Puts book into drawer
             b.EndInteraction();

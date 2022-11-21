@@ -24,7 +24,6 @@ public class CatchPlayerWithBookState : AIState
         {
             stateManager.ai.canTransit = true;
             stateManager.ai.StopMoving();
-            Debug.Log("catch player sequence ended, game has resumed");
         }
     }
 }

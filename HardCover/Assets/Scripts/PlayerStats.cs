@@ -175,15 +175,40 @@ public class PlayerStats : MonoBehaviour
         progressBar.fillAmount = val;
     }
 
-    public bool TryPurchase(int cost)
+    public bool TryPurchase(int cost, bool pop = true)
     {
         if (mCash >= cost)
         {
-            AdjustCash(-cost);
+            AdjustCash(-cost, pop);
             return true;
         }
 
         return false;
+    }
+
+    public bool TryConsumeEnergy(int energyCost, bool pop = true)
+    {
+        if (mEnergy >= energyCost)
+        {
+            AdjustEnergy(-energyCost, pop);
+            return true;
+        }
+
+        return false;
+    }
+
+    public int JustConsumeEnergy(int energyCost, bool pop = true)
+    {
+        if (mEnergy >= energyCost)
+        {
+            AdjustEnergy(-energyCost, pop);
+            return energyCost;
+        }
+        else
+        {
+            AdjustEnergy(-mEnergy, pop);
+            return mEnergy;
+        }
     }
 
     public void PayBribe()
@@ -193,15 +218,17 @@ public class PlayerStats : MonoBehaviour
 
     public void PenaltyTimeskip()
     {
-        int time = GlobalGameData.timeManager.GetTime();
-
-        if (time > 18 || time < 5) // Time skip to 5am
+        if (GlobalGameData.timeManager.IsBeforeWork())
         {
-            GlobalGameData.timeManager.AddTimeUntil(5);
+            GlobalGameData.timeManager.AddTimeUntil(DayNightCycleManager.WorkStartTime);
         }
-        else // Time skip to 6pm
+        else if (GlobalGameData.timeManager.IsDuringWork())
         {
-            GlobalGameData.timeManager.AddTimeUntil(18);
+            GlobalGameData.timeManager.AddTimeUntil(DayNightCycleManager.WorkEndTime);
+        }
+        else if (GlobalGameData.timeManager.IsAfterWork())
+        {
+            GlobalGameData.timeManager.AddTimeUntil(DayNightCycleManager.WakeUpTime);
         }
     }
 }

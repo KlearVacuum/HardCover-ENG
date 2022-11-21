@@ -1,10 +1,37 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class BookShopCounter : MonoBehaviour, IInteractableAndActionable
+public class BookShopCounter : MonoBehaviour, IInteractable
 {
-    public Transform bookLocationOnCounter;
-    private Book mBook;
+    public ShopUiScript shopUi = null;
+    public GameObject[] mBookList = new GameObject[3];
+
+    public GameObject GetBook(int i)
+    {
+        return mBookList[i];
+    }
+
+    public Book BuyBook(int i)
+    {
+        GameObject prefab = mBookList[i];
+
+        if (prefab != null)
+        {
+            Book b = GameObject.Instantiate(prefab, transform.position, Quaternion.identity).GetComponentInChildren<Book>();
+
+            if (b.BookOwner != "Amanda")
+            {
+                if (GlobalGameData.playerStats.TryPurchase(b.BookCost))
+                {
+                    b.BookOwner = "Amanda";
+                    mBookList[i] = null;
+                    return b;
+                }
+            }
+        }
+
+        return null;
+    }
 
     // ========================================================
     // ALL INTERFACE THINGS
@@ -15,38 +42,7 @@ public class BookShopCounter : MonoBehaviour, IInteractableAndActionable
     // ========================================================
     public void StartInteraction(GameObject interactor)
     {
-        IInteractable ii = interactor.GetComponent<InteractionController>().GetBook();
-        if (ii != null)
-        {
-            // Holding Book
-            mBook = ii.GetObject().GetComponent<Book>();
-
-            // Puts book at the counter
-            mBook.EndInteraction();
-            mBook.SetPosition(bookLocationOnCounter.position);
-        }
-        else if (mBook != null)
-        {
-            mBook.StartInteraction(interactor);
-            mBook = null;
-        }
-    }
-
-    public void StartAction()
-    {
-        // Purchase Book
-        if (mBook != null && mBook.BookOwner != "Amanda")
-        {
-            if (GlobalGameData.playerStats.TryPurchase(mBook.BookCost))
-            {
-                mBook.BookOwner = "Amanda";
-            }
-        }
-    }
-
-    public bool IsInteracting()
-    {
-        return mBook != null;
+        shopUi.Show();
     }
 
     public InteractionPriority GetPriority()
@@ -57,20 +53,5 @@ public class BookShopCounter : MonoBehaviour, IInteractableAndActionable
     public GameObject GetObject()
     {
         return gameObject;
-    }
-
-    public void EndInteraction()
-    {
-        // Blank
-    }
-
-    public void EndAction()
-    {
-        // Blank
-    }
-
-    public bool IsActioning()
-    {
-        return false;
     }
 }
