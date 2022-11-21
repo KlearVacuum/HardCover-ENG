@@ -3,7 +3,7 @@
 public class Bed : MonoBehaviour, IInteractableAndActionable
 {
     public int EnergyRecoveryPerHour = 5;
-    public int WakeUpTime = DayNightCycleManager.WakeUpTime; // 5am Wakeup time
+    public int WakeUpTime = DayNightCycleManager.WakeUpTime;
     public int OverSleepTime = 3;
 
     public GameObject Orientation;
@@ -21,6 +21,10 @@ public class Bed : MonoBehaviour, IInteractableAndActionable
         int tillWakeUpTime = GlobalGameData.timeManager.HoursLeftTill(WakeUpTime);
         int difference = hoursRequired - tillWakeUpTime;
 
+        Debug.Log("Sleep Time: " + time);
+        Debug.Log("Hours Required: " + hoursRequired);
+        Debug.Log("Till Wake up time: " + tillWakeUpTime);
+
         if (time == WakeUpTime && hoursRequired == 0)
         {
             timeToSleepUntil = time + OverSleepTime;
@@ -37,7 +41,7 @@ public class Bed : MonoBehaviour, IInteractableAndActionable
             if (hoursRequired > tillWakeUpTime)
             {
                 // Just sleep till wake up time
-                timeToSleepUntil = tillWakeUpTime;
+                timeToSleepUntil = time + tillWakeUpTime;
             }
             else
             {
@@ -50,6 +54,8 @@ public class Bed : MonoBehaviour, IInteractableAndActionable
         {
             timeToSleepUntil -= 24;
         }
+
+        Debug.Log("Time to sleep until: " + timeToSleepUntil);
 
         return timeToSleepUntil;
     }

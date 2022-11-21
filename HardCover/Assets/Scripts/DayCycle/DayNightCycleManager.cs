@@ -147,7 +147,7 @@ public class DayNightCycleManager : MonoBehaviour
     public bool IsDuringWork()
     {
         return mDay % 7 != 0 &&
-               (mTime >= WorkStartTime || mTime < WorkEndTime);
+               (mTime >= WorkStartTime && mTime < WorkEndTime);
     }
 
     public bool IsAfterWork()

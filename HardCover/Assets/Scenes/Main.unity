@@ -262,6 +262,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bookshop Owner
       objectReference: {fileID: 0}
+    - target: {fileID: 5933897288617493676, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933897288617493677, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5933897288617493678, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
       propertyPath: maxSpeed
       value: 2.5
@@ -420,6 +428,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+--- !u!1 &3143496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5933897288617493651, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+  m_PrefabInstance: {fileID: 3143495}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3143497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3143496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb5c76bce7520642b96b638715de4ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3143498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3143496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5637717c0a42c8942bbcca136e4bbed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Ah Chai
 --- !u!4 &11518958 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7604155570101637406, guid: 94c4cc49004946c4ba56442a72d2ed79, type: 3}
@@ -2384,6 +2422,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dorm Landlord
       objectReference: {fileID: 0}
+    - target: {fileID: 5933897288617493676, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933897288617493677, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933897288617493677, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5933897288617493678, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
       propertyPath: viewRange
       value: 8
@@ -2594,6 +2644,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+--- !u!1 &176413271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5933897288617493651, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+  m_PrefabInstance: {fileID: 176413270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &176413272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176413271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb5c76bce7520642b96b638715de4ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &176413273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176413271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5637717c0a42c8942bbcca136e4bbed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Larry
 --- !u!1 &176801207
 GameObject:
   m_ObjectHideFlags: 0
@@ -8587,6 +8667,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Female Worker (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5933897288617493676, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933897288617493677, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5933897288617493678, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
       propertyPath: maxSpeed
       value: 2.8
@@ -9021,6 +9109,36 @@ PrefabInstance:
       objectReference: {fileID: 1021182120}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+--- !u!1 &703008329 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5933897288617493651, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+  m_PrefabInstance: {fileID: 703008328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &703008330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703008329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb5c76bce7520642b96b638715de4ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &703008331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703008329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5637717c0a42c8942bbcca136e4bbed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Coworker
 --- !u!1001 &710194521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10094,6 +10212,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Textile Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 5933897288617493676, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933897288617493677, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5933897288617493678, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
       propertyPath: maxSpeed
       value: 3.5
@@ -10284,6 +10410,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+--- !u!1 &783288197 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5933897288617493651, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+  m_PrefabInstance: {fileID: 783288196}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &783288198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783288197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb5c76bce7520642b96b638715de4ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &783288199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783288197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5637717c0a42c8942bbcca136e4bbed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Ting Hoon
 --- !u!1 &797814652
 GameObject:
   m_ObjectHideFlags: 0
@@ -15123,6 +15279,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Female Worker
       objectReference: {fileID: 0}
+    - target: {fileID: 5933897288617493676, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933897288617493677, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5933897288617493678, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
       propertyPath: maxSpeed
       value: 2.8
@@ -15557,6 +15721,36 @@ PrefabInstance:
       objectReference: {fileID: 1021182120}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+--- !u!1 &1397865094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5933897288617493651, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+  m_PrefabInstance: {fileID: 1397865093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1397865095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397865094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb5c76bce7520642b96b638715de4ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1397865096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397865094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5637717c0a42c8942bbcca136e4bbed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Coworker
 --- !u!1001 &1406507411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20076,6 +20270,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Female Worker (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5933897288617493676, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933897288617493677, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5933897288617493678, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
       propertyPath: maxSpeed
       value: 2.8
@@ -20510,6 +20712,36 @@ PrefabInstance:
       objectReference: {fileID: 1021182120}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+--- !u!1 &1872982291 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5933897288617493651, guid: abf34a6ae65ca8745909e67b53798dd4, type: 3}
+  m_PrefabInstance: {fileID: 1872982290}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1872982292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872982291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb5c76bce7520642b96b638715de4ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1872982293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872982291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5637717c0a42c8942bbcca136e4bbed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Coworker
 --- !u!1 &1874811631
 GameObject:
   m_ObjectHideFlags: 0
