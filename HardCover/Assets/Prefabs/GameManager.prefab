@@ -154,7 +154,19 @@ MonoBehaviour:
         not allowed here\u2026 Please, keep it away before it\u2019s too late\u2026!"
       FunctionToInvoke:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: TempScript, Assembly-CSharp
+            m_MethodName: BribedNpc
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   - Key: Coworker_CatchAmanda1
     Value:
     - Speaker: Coworker
@@ -166,7 +178,7 @@ MonoBehaviour:
   - Key: Ting Hoon_BeforeWork
     Value:
     - Speaker: Ting Hoon
-      Text: "What are you doing here? The factory isn\u2019t open yet!"
+      Text: "You\u2019re not useful up here, get out!"
       FunctionToInvoke:
         m_PersistentCalls:
           m_Calls: []
@@ -181,7 +193,7 @@ MonoBehaviour:
   - Key: Ting Hoon_AfterWork
     Value:
     - Speaker: Ting Hoon
-      Text: "You\u2019re not useful up here, get out!"
+      Text: "What are you doing here? The factory isn\u2019t open yet!"
       FunctionToInvoke:
         m_PersistentCalls:
           m_Calls: []
@@ -192,7 +204,19 @@ MonoBehaviour:
         you\u2019re not!"
       FunctionToInvoke:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: TempScript, Assembly-CSharp
+            m_MethodName: BribedNpc
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   - Key: Ting Hoon_CatchAmanda1
     Value:
     - Speaker: Ting Hoon
@@ -265,7 +289,19 @@ MonoBehaviour:
         that book at once!
       FunctionToInvoke:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: TempScript, Assembly-CSharp
+            m_MethodName: BribedNpc
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   - Key: Larry_CatchAmanda1
     Value:
     - Speaker: Larry
@@ -277,46 +313,70 @@ MonoBehaviour:
   - Key: Ah Chai_BeforeWork
     Value:
     - Speaker: Ah Chai
-      Text: Hello, Amanda.
+      Text: 'Good day to you, Amanda! '
       FunctionToInvoke:
         m_PersistentCalls:
           m_Calls: []
   - Key: Ah Chai_DuringWork
     Value:
     - Speaker: Ah Chai
-      Text: "You seem rather free today\u2026 have you finally married out into a
-        wealthy family?"
+      Text: "You seem rather free today\u2026 Let me know if anything catches your
+        eye!"
       FunctionToInvoke:
         m_PersistentCalls:
           m_Calls: []
   - Key: Ah Chai_AfterWork
     Value:
     - Speaker: Ah Chai
-      Text: "sigh another day without a rich kid visiting\u2026"
+      Text: 'Good evening, Amanda! How has your day been? '
       FunctionToInvoke:
         m_PersistentCalls:
           m_Calls: []
   - Key: Ah Chai_BuyBook0
     Value:
     - Speaker: Ah Chai
-      Text: "Well, you\u2019re the last person I\u2019d expect to be interested in
-        the likes of education, but business is business, eh? Do come again. "
+      Text: "Wow, a woman who\u2019s interested in- I mean, it\u2019s not common,
+        you see. I don\u2019t mind, just be careful about the prying eyes of others! "
       FunctionToInvoke:
         m_PersistentCalls:
           m_Calls: []
   - Key: Ah Chai_BuyBook1
     Value:
     - Speaker: Ah Chai
-      Text: "It seems you\u2019re much more loaded than a woman ought to be! Running
-        an errand for your man, perhaps?"
+      Text: "Back for another? I\u2019m impressed! Being educated isn\u2019t the
+        easiest thing to do when everyone spites you for it, and yet you\u2019re
+        pushing through. You have my fullest support, Amanda! Go make your dreams
+        come true! "
       FunctionToInvoke:
         m_PersistentCalls:
           m_Calls: []
-  - Key: Ah Chai_CatchAmanda0
+  - Key: Amanda_Intro
     Value:
-    - Speaker: Ah Chai
-      Text: "If I tell everyone what I see here today, we both know that it won\u2019t
-        end well for you\u2026 "
+    - Speaker: Amanda
+      Text: "The entrance exam into the local University is in 2 weeks. I\u2019ve
+        been saving up and working hard, but will that be enough to let me in? No,
+        no matter what they say, I\u2019ll have to try."
+      FunctionToInvoke:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 4137564787863911031}
+            m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+            m_MethodName: CallFadeOut
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - Key: Amanda_Intro2
+    Value:
+    - Speaker: Coworker
+      Text: "\u2026Amanda? Amanda, wake up! We\u2019re gonna be late for work! You
+        don\u2019t wanna make boss Ting Hoon any more mad than he already is every
+        other day! Let\u2019s go!"
       FunctionToInvoke:
         m_PersistentCalls:
           m_Calls: []
@@ -344,22 +404,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mChatBox: {fileID: 0}
-  mCurrentProgress: 0
   FullChatExposed:
   - Key: Ting Hoon_ProposeMarriage
     Value:
     - Speaker: Ting Hoon
-      Text: You smart
+      Text: "What\u2019s your name again\u2026? Ah yes, Mandy."
       FunctionToInvoke:
         m_PersistentCalls:
           m_Calls: []
     - Speaker: Ting Hoon
-      Text: I want you
+      Text: 'You seem pretty capable, better than the rest of the women out there,
+        at least. '
       FunctionToInvoke:
         m_PersistentCalls:
           m_Calls: []
     - Speaker: Ting Hoon
-      Text: Want me?
+      Text: "How about you marry my son? You don\u2019t ever have to worry about
+        money or work ever again."
       FunctionToInvoke:
         m_PersistentCalls:
           m_Calls: []
@@ -372,93 +433,6 @@ MonoBehaviour:
             m_TargetAssemblyTypeName: TempScript, Assembly-CSharp
             m_MethodName: MarriageDecision
             m_Mode: 0
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-  - Key: Ting Hoon_Convo
-    Value:
-    - Speaker: Ting Hoon
-      Text: How things?
-      FunctionToInvoke:
-        m_PersistentCalls:
-          m_Calls: []
-    - Speaker: Good
-      Text: Bad
-      FunctionToInvoke:
-        m_PersistentCalls:
-          m_Calls: []
-  - Key: Ting Hoon_Convo_1
-    Value:
-    - Speaker: Amanda
-      Text: Yeah things are grea!
-      FunctionToInvoke:
-        m_PersistentCalls:
-          m_Calls: []
-    - Speaker: Amanda
-      Text: How is profits?
-      FunctionToInvoke:
-        m_PersistentCalls:
-          m_Calls: []
-    - Speaker: Good
-      Text: Bad
-      FunctionToInvoke:
-        m_PersistentCalls:
-          m_Calls: []
-  - Key: Ting Hoon_Convo_1_1
-    Value:
-    - Speaker: Ting Hoon
-      Text: Good profits
-      FunctionToInvoke:
-        m_PersistentCalls:
-          m_Calls: []
-    - Speaker: Ting Hoon
-      Text: Bye
-      FunctionToInvoke:
-        m_PersistentCalls:
-          m_Calls: []
-    - Speaker: 
-      Text: 
-      FunctionToInvoke:
-        m_PersistentCalls:
-          m_Calls: []
-  - Key: Ting Hoon_Convo_1_2
-    Value:
-    - Speaker: Ting Hoon
-      Text: Bad Profits
-      FunctionToInvoke:
-        m_PersistentCalls:
-          m_Calls: []
-    - Speaker: Ting Hoon
-      Text: Okay bye
-      FunctionToInvoke:
-        m_PersistentCalls:
-          m_Calls: []
-    - Speaker: 
-      Text: 
-      FunctionToInvoke:
-        m_PersistentCalls:
-          m_Calls: []
-  - Key: Ting Hoon_Convo_2
-    Value:
-    - Speaker: Amanda
-      Text: Horrible
-      FunctionToInvoke:
-        m_PersistentCalls:
-          m_Calls: []
-    - Speaker: 
-      Text: 
-      FunctionToInvoke:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 0}
-            m_TargetAssemblyTypeName: TempScript, Assembly-CSharp
-            m_MethodName: GoTo
-            m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

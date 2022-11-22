@@ -740,8 +740,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Owner: Amanda'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -944,7 +944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7058824, g: 0.6666667, b: 0.57254905, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1057,7 +1057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7058824, g: 0.6666667, b: 0.57254905, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1101,7 +1101,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -115, y: -170}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &88235167
 GameObject:
@@ -2815,8 +2815,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Shop
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2846,7 +2846,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3982,8 +3982,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Owner: Amanda'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4280,15 +4280,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Buy
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4311,7 +4311,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5023,8 +5023,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Cost: 30'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5054,7 +5054,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5115,7 +5115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115, y: -120}
+  m_AnchoredPosition: {x: -115, y: -110}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &351612511
@@ -5418,15 +5418,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Take
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278650889
+  m_fontColor: {r: 0.03529412, g: 0.03137255, b: 0.027450982, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5449,7 +5449,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5533,8 +5533,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Volume: 2'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6105,7 +6105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7058824, g: 0.6666667, b: 0.57254905, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6149,7 +6149,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -115, y: 42}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &389615497
 GameObject:
@@ -7504,7 +7504,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 330, y: -170}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &546130338
 MonoBehaviour:
@@ -7575,7 +7575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7058824, g: 0.6666667, b: 0.57254905, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7675,8 +7675,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Volume: 3'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10609,15 +10609,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Take
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278650889
+  m_fontColor: {r: 0.03529412, g: 0.03137255, b: 0.027450982, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10640,7 +10640,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -10859,8 +10859,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Cost: 30'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10890,7 +10890,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -10951,7 +10951,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 330, y: 91}
+  m_AnchoredPosition: {x: 330, y: 100}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &782259958
@@ -14156,7 +14156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7058824, g: 0.6666667, b: 0.57254905, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14200,7 +14200,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -115, y: -170}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1147356579
 GameObject:
@@ -15076,7 +15076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7058824, g: 0.6666667, b: 0.57254905, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15120,7 +15120,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 330, y: 42}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1255093109
 GameObject:
@@ -15972,8 +15972,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Volume: 1'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17296,8 +17296,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Owner: Amanda'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17595,15 +17595,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Take
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278650889
+  m_fontColor: {r: 0.03529412, g: 0.03137255, b: 0.027450982, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -17626,7 +17626,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -19333,8 +19333,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Progress: 50%'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19364,7 +19364,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -19425,7 +19425,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 330, y: 91}
+  m_AnchoredPosition: {x: 330, y: 100}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1616479465
@@ -20387,8 +20387,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Progress: 50%'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20418,7 +20418,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -20479,7 +20479,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115, y: 91}
+  m_AnchoredPosition: {x: -115, y: 100}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1714753642
@@ -20664,8 +20664,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Progress: 50%'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20695,7 +20695,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -20756,7 +20756,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 330, y: -120}
+  m_AnchoredPosition: {x: 330, y: -110}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1734475217
@@ -20868,7 +20868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7058824, g: 0.6666667, b: 0.57254905, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -20953,15 +20953,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Buy
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -20984,7 +20984,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -21369,7 +21369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7058824, g: 0.6666667, b: 0.57254905, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21413,7 +21413,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 330, y: 42}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1797044725
 GameObject:
@@ -21641,8 +21641,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Drawer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -21672,7 +21672,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -22553,8 +22553,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Progress: 50%'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22584,7 +22584,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -22645,7 +22645,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115, y: -120}
+  m_AnchoredPosition: {x: -115, y: -110}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1900894653
@@ -22927,15 +22927,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Take
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278650889
+  m_fontColor: {r: 0.03529412, g: 0.03137255, b: 0.027450982, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -22958,7 +22958,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -23341,15 +23341,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Buy
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -23372,7 +23372,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -23588,7 +23588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7058824, g: 0.6666667, b: 0.57254905, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -23632,7 +23632,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -115, y: 42}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1975653434
 GameObject:
@@ -23674,8 +23674,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Cost: 30'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -23705,7 +23705,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -23766,7 +23766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115, y: 91}
+  m_AnchoredPosition: {x: -115, y: 100}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1979682386
@@ -24409,8 +24409,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Owner: Amanda'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_sharedMaterial: {fileID: -1689984506004068775, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -24576,183 +24576,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 137347071}
     - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[0].Text
-      value: "What\u2019s your name again\u2026? Ah yes, Mandy."
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[1].Text
-      value: 'You seem pretty capable, better than the rest of the women out there,
-        at least. '
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[2].Text
-      value: "How about you marry my son? You don\u2019t ever have to worry about
-        money or work ever again."
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[1].Speaker
-      value: Ting Hoon
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[2].Speaker
-      value: Ting Hoon
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[1].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[2].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[1].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 568656699}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[2].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 568656699}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
       propertyPath: FullChatExposed.Array.data[0].Value.Array.data[3].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 568656699}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[5].Value.Array.data[1].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 568656699}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[1].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[2].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[1].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MarriageDecision
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[2].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MarriageDecision
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[1].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TempScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[2].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TempScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[1].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911034, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[0].Value.Array.data[2].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
       propertyPath: mChatBox
       value: 
       objectReference: {fileID: 275253204}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.size
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[30].Key
-      value: Amanda_Intro
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[31].Key
-      value: Amanda_Intro2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[30].Value.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[31].Value.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].Text
-      value: "The entrance exam into the local University is in 2 weeks. I\u2019ve
-        been saving up and working hard, but will that be enough to let me in? No,
-        no matter what they say, I\u2019ll have to try."
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[31].Value.Array.data[0].Text
-      value: "\u2026Amanda? Amanda, wake up! We\u2019re gonna be late for work! You
-        don\u2019t wanna make boss Ting Hoon any more mad than he already is every
-        other day! Let\u2019s go!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].Speaker
-      value: Amanda
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[31].Value.Array.data[0].Speaker
-      value: Coworker
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[9].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[14].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[22].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[29].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[31].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[9].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[14].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[22].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[22].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[29].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
       propertyPath: FullChatExposed.Array.data[9].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -24769,118 +24599,6 @@ PrefabInstance:
       propertyPath: FullChatExposed.Array.data[22].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 568656699}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[29].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 568656699}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 4137564787886018871}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[31].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 4137564787886018871}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[9].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[14].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[22].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[22].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[29].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[31].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[9].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BribedNpc
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[14].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BribedNpc
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[22].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BribedNpc
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[29].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BribedNpc
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CallFadeOut
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[31].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CallFadeOut
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[9].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TempScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[14].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TempScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[22].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TempScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[29].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TempScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[31].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[9].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[14].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[22].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[29].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[30].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137564787863911035, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-      propertyPath: FullChatExposed.Array.data[31].Value.Array.data[0].FunctionToInvoke.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
 --- !u!114 &4137564787886018867 stripped
@@ -24903,17 +24621,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc324c1355244c5409f512194c67eb8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4137564787886018871 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4137564787863911031, guid: fecd93d69ea04be4baf828534c6710ce, type: 3}
-  m_PrefabInstance: {fileID: 4137564787886018866}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d57da69262980aa43b97d76991ec8e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &4347713899027224403

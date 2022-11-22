@@ -95,14 +95,17 @@ public class PatrolState : AIState
         }
 
         // go to actual destination
-        stateManager.ai.moveToTarget = stateManager.ai.activePatrol.patrolPoints[stateManager.ai.patrolIndex];
-        distance = Vector2.Distance(stateManager.ai.transform.position, patrolPoint);
-        while (distance > 0.5f)
+        if (stateManager.ai.patrolIndex < stateManager.ai.activePatrol.patrolPoints.Count)
         {
-            // Debug.DrawLine(stateManager.transform.position, patrolPoint, Color.white);
-            stateManager.ai.MoveTowardTarget();
+            stateManager.ai.moveToTarget = stateManager.ai.activePatrol.patrolPoints[stateManager.ai.patrolIndex];
             distance = Vector2.Distance(stateManager.ai.transform.position, patrolPoint);
-            yield return null;
+            while (distance > 0.5f)
+            {
+                // Debug.DrawLine(stateManager.transform.position, patrolPoint, Color.white);
+                stateManager.ai.MoveTowardTarget();
+                distance = Vector2.Distance(stateManager.ai.transform.position, patrolPoint);
+                yield return null;
+            }
         }
         stateManager.ai.StopMoving();
         yield return new WaitForSeconds(stateManager.ai.activePatrol.waitTime + Random.Range(-0.5f, 0.5f));
