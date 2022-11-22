@@ -94,7 +94,7 @@ public class AIEntityController : MonoBehaviour
         if (movementInput == Vector2.zero)
         {
             animator.SetBool("isMoving", false);
-            rb.velocity *= 1 - Time.fixedDeltaTime;
+            rb.velocity *= 1 - Time.fixedDeltaTime * 5f;
             return;
         }
         animator.SetBool("isMoving", true);
