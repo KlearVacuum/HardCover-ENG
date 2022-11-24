@@ -177,7 +177,7 @@ public class PlayerStats : MonoBehaviour
 
     public bool CanPassUni()
     {
-        return mKnowledge == 100 && mEnergy > 60 && mCash >= 200;
+        return mKnowledge == 100 && mEnergy >= 60 && mCash >= 200;
     }
 
     public bool TryPurchase(int cost, bool pop = true)
