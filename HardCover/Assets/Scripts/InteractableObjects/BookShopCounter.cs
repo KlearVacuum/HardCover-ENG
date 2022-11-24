@@ -17,7 +17,8 @@ public class BookShopCounter : MonoBehaviour, IInteractable
 
         if (prefab != null)
         {
-            Book b = GameObject.Instantiate(prefab, transform.position, Quaternion.identity).GetComponentInChildren<Book>();
+            Book b = GameObject.Instantiate(prefab, transform.position, Quaternion.identity)
+                .GetComponentInChildren<Book>();
 
             if (b.BookOwner != "Amanda")
             {
@@ -31,6 +32,17 @@ public class BookShopCounter : MonoBehaviour, IInteractable
         }
 
         return null;
+    }
+
+    public int BookLeft()
+    {
+        int count = 0;
+        for (int i = 0; i < 3; ++i)
+        {
+            if (mBookList[i] != null) ++count;
+        }
+
+        return count;
     }
 
     // ========================================================
@@ -47,7 +59,7 @@ public class BookShopCounter : MonoBehaviour, IInteractable
 
     public InteractionPriority GetPriority()
     {
-        return InteractionPriority.Medium;
+        return InteractionPriority.Default;
     }
 
     public GameObject GetObject()

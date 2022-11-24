@@ -19576,7 +19576,7 @@ GameObject:
   - component: {fileID: 1635950635}
   - component: {fileID: 1635950634}
   m_Layer: 0
-  m_Name: Collider (1)
+  m_Name: UniversityEntrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -31,6 +31,19 @@ public class ShopUiScript : MonoBehaviour
         b.BoughtFromShop();
 
         Hide();
+
+        if (ConnectedShop.BookLeft() == 2)
+        {
+            GlobalGameData.dialogManager.StartChat("Ah Chai", "BuyBook0");
+        }
+        else if (ConnectedShop.BookLeft() == 1)
+        {
+            GlobalGameData.dialogManager.StartChat("Ah Chai", "BuyBook1");
+        }
+        else if (ConnectedShop.BookLeft() == 0)
+        {
+            GlobalGameData.dialogManager.StartChat("Ah Chai", "BuyBook1");
+        }
     }
 
     private void FillInformation(ref Slot slot, GameObject go)

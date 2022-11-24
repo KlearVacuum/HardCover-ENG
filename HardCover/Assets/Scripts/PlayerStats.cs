@@ -223,17 +223,6 @@ public class PlayerStats : MonoBehaviour
 
     public void PenaltyTimeskip()
     {
-        if (GlobalGameData.timeManager.IsBeforeWork())
-        {
-            GlobalGameData.timeManager.AddTimeUntil(DayNightCycleManager.WorkStartTime);
-        }
-        else if (GlobalGameData.timeManager.IsDuringWork())
-        {
-            GlobalGameData.timeManager.AddTimeUntil(DayNightCycleManager.WorkEndTime);
-        }
-        else if (GlobalGameData.timeManager.IsAfterWork())
-        {
-            GlobalGameData.timeManager.AddTimeUntil(DayNightCycleManager.WakeUpTime);
-        }
+        GlobalGameData.timeManager.AddTime();
     }
 }
