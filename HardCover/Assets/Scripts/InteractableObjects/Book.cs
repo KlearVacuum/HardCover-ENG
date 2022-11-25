@@ -53,15 +53,15 @@ public class Book : MonoBehaviour, IInteractableAndActionable
             {
                 while (timePassedSinceAction > SecondsPerHour)
                 {
-                    mRemainingKnowledge -= ProgressionPerHour;
                     timePassedSinceAction -= SecondsPerHour;
 
                     // Don't pop for the last tick, just show knowledge gain
-                    if (GlobalGameData.playerStats.TryConsumeEnergy(EnergyConsumptionRatePerHour,
-                            mRemainingKnowledge > 0))
+                    if (GlobalGameData.playerStats.TryConsumeEnergy(EnergyConsumptionRatePerHour))
                     {
+                        mRemainingKnowledge -= ProgressionPerHour;
                         GlobalGameData.timeManager.AddTime();
                         GlobalGameData.playerStats.AdjustKnowledge((int)((float)KnowledgeToPlayer * (float)ProgressionPerHour / 100));
+                        GlobalGameData.playerStats.SetProgress(1.0f - (float)mRemainingKnowledge / (float)kStartingKnowledge);
                     }
                 }
             }
@@ -71,7 +71,6 @@ public class Book : MonoBehaviour, IInteractableAndActionable
                 EndAction();
             }
 
-            GlobalGameData.playerStats.SetProgress(1.0f - (float)mRemainingKnowledge / (float)kStartingKnowledge);
             timePassedSinceAction += Time.deltaTime;
         }
     }

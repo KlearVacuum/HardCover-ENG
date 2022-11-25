@@ -60,21 +60,53 @@ public class PlayerStats : MonoBehaviour
         switch (mKnowledge)
         {
             case 100:
+            {
                 // stop reading and drop book
+                if (GlobalGameData.playerStats.GetComponent<InteractionController>().GetBook() is Book b)
+                {
+                    b.EndAction();
+                    b.EndInteraction();
+                }
+
                 GlobalGameData.dialogManager.StartChat("Amanda", "100");
                 break;
+            }
             case 75:
+            {
                 // stop reading and drop book
+                if (GlobalGameData.playerStats.GetComponent<InteractionController>().GetBook() is Book b)
+                {
+                    b.EndAction();
+                    b.EndInteraction();
+                }
+
                 GlobalGameData.dialogManager.StartChat("Amanda", "75");
                 break;
+            }
             case 50:
+            {
                 // stop reading and drop book
+                if (GlobalGameData.playerStats.GetComponent<InteractionController>().GetBook() is Book b)
+                {
+                    b.EndAction();
+                    b.EndInteraction();
+                }
+
                 GlobalGameData.dialogManager.StartChat("Amanda", "50");
                 break;
+            }
             case 25:
+            {
                 // stop reading and drop book
+                if (GlobalGameData.playerStats.GetComponent<InteractionController>().GetBook() is Book b)
+                {
+                    b.EndAction();
+                    b.EndInteraction();
+                }
+
                 GlobalGameData.dialogManager.StartChat("Amanda", "25");
                 break;
+            }
         }
 
         if (!pop)
