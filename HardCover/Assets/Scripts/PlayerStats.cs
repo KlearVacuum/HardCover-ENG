@@ -29,7 +29,7 @@ public class PlayerStats : MonoBehaviour
 
     public TextMeshProUGUI knowledgeUI, energyUI, cashUI;
 
-    private int mKnowledge = 0;
+    private int mKnowledge = 20;
     private int mEnergy = 0;
     private int mCash = 0;
 
@@ -50,22 +50,6 @@ public class PlayerStats : MonoBehaviour
         AdjustCash(150, false);
     }
 
-    private void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.Alpha1))
-        //{
-        //    knowledge+=10;
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha2))
-        //{
-        //    energy -= 10;
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha3))
-        //{
-        //    cash -= 50;
-        //}
-    }
-
     public void AdjustKnowledge(int value, bool pop = true)
     {
         int initKnowledge = mKnowledge;
@@ -76,15 +60,19 @@ public class PlayerStats : MonoBehaviour
         switch (mKnowledge)
         {
             case 100:
+                // stop reading and drop book
                 GlobalGameData.dialogManager.StartChat("Amanda", "100");
                 break;
             case 75:
+                // stop reading and drop book
                 GlobalGameData.dialogManager.StartChat("Amanda", "75");
                 break;
             case 50:
+                // stop reading and drop book
                 GlobalGameData.dialogManager.StartChat("Amanda", "50");
                 break;
             case 25:
+                // stop reading and drop book
                 GlobalGameData.dialogManager.StartChat("Amanda", "25");
                 break;
         }
@@ -123,11 +111,11 @@ public class PlayerStats : MonoBehaviour
 
         if (value >= 0)
         {
-            GlobalGameData.PopInPopOutValue(transform.position, $"+{value} Energy", StatAdjustColors.EnergyIncrease);
+            GlobalGameData.PopInPopOutValue(transform.position, $"+{value}% Energy", StatAdjustColors.EnergyIncrease);
         }
         else
         {
-            GlobalGameData.PopInPopOutValue(transform.position, $"{value} Energy", StatAdjustColors.EnergyDecrease);
+            GlobalGameData.PopInPopOutValue(transform.position, $"{value}% Energy", StatAdjustColors.EnergyDecrease);
         }
     }
 

@@ -2,15 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class DayNightCycleManager : MonoBehaviour
 {
     public TextMeshProUGUI dayNumText;
     public TextMeshProUGUI dayNameText;
     public TextMeshProUGUI timeText;
+    public Light2D globalLight;
 
     public int StartTime = 5;
     public int StartDay = 1;
+
+    public Color daySkyColor;
+    public Color eveningSkyColor;
+    public Color nightSkyColor;
+    public float skyColorLerpSpeed;
 
     private int mTime = 0;
     private int mDay = 0;
@@ -49,6 +56,76 @@ public class DayNightCycleManager : MonoBehaviour
         UpdateUi();
         foreach (var npc in GlobalGameData.allNPCs) npc.canTransit = true;
     }
+
+    private void Update()
+    {
+        SkyColorLerp();
+        GlobalLightLerp();
+    }
+
+    void GlobalLightLerp()
+    {
+        float desiredIntensity;
+
+        // between 12pm to 6pm, full strength
+        if (mTime > 12 && mTime <= 18)
+        {
+            desiredIntensity = 0.8f;
+        }
+        // between 6pm to 9pm, dim
+        else if (mTime > 18 && mTime <= 21)
+        {
+            float t = (float)((mTime - 18) / (21f - 18f));
+            desiredIntensity = Mathf.Lerp(0.8f, 0.3f, t);
+        }
+        // between 6am to 12pm, brighten
+        else if (mTime > 6 && mTime <= 12)
+        {
+            float t = (float)((mTime - 6) / (12f - 6f));
+            desiredIntensity = Mathf.Lerp(0.3f, 0.8f, t);
+        }
+        else desiredIntensity = 0.3f;
+
+        if (Mathf.Abs(globalLight.intensity - desiredIntensity) <= 0.0001f) return;
+        globalLight.intensity += (desiredIntensity - globalLight.intensity) * Time.deltaTime * skyColorLerpSpeed;
+    }
+
+    void SkyColorLerp()
+    {
+        Color currColor = Camera.main.backgroundColor;
+        Color desiredColor = GetDesiredSkyColor();
+
+        if (Vector4.Distance(currColor, desiredColor) <= 0.02f) return;
+
+        Camera.main.backgroundColor += new Color(desiredColor.r - currColor.r, desiredColor.g - currColor.g, desiredColor.b - currColor.b, desiredColor.a - currColor.a) * Time.deltaTime * skyColorLerpSpeed;
+    }
+
+    Color GetDesiredSkyColor()
+    {
+        // 6am to 3pm
+        if (mTime > 6 && mTime <= 15)
+        {
+            float t = (float)((mTime - 6f) / (15f - 6f));
+            return Vector4.Lerp(nightSkyColor, daySkyColor, t);
+        }
+
+        // 3pm to 5pm
+        else if (mTime > 15 && mTime <= 17)
+        {
+            float t = (float)((mTime - 15f) / (17f - 15f));
+            return Vector4.Lerp(daySkyColor, eveningSkyColor, t);
+        }
+
+        // 5pm to 9pm
+        else if (mTime > 17 && mTime <= 21)
+        {
+            float t = (float)((mTime - 17f) / (21f - 17f));
+            return Vector4.Lerp(eveningSkyColor, nightSkyColor, t);
+        }
+
+        return nightSkyColor;
+    }
+
 
     public int HoursPassedFrom(int timeFrom)
     {

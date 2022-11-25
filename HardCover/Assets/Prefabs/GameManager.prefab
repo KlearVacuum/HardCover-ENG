@@ -62,8 +62,13 @@ MonoBehaviour:
   dayNumText: {fileID: 0}
   dayNameText: {fileID: 0}
   timeText: {fileID: 0}
+  globalLight: {fileID: 0}
   StartTime: 6
   StartDay: 1
+  daySkyColor: {r: 0, g: 0, b: 0, a: 0}
+  eveningSkyColor: {r: 0, g: 0, b: 0, a: 0}
+  nightSkyColor: {r: 0, g: 0, b: 0, a: 0}
+  skyColorLerpSpeed: 0
 --- !u!114 &4137564787863911035
 MonoBehaviour:
   m_ObjectHideFlags: 0

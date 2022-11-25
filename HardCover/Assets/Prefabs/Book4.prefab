@@ -170,10 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236a219c94f11a64b8c6a77583aecd84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drawer: {fileID: 0}
-  shop: {fileID: 0}
   KnowledgeToPlayer: 25
-  ProgressionPerHour: 10
+  ProgressionPerHour: 5
   EnergyConsumptionRatePerHour: 2
   BookCost: 30
   SecondsPerHour: 2

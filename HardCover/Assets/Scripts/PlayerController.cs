@@ -120,13 +120,13 @@ public class PlayerController : MonoBehaviour
         {
             float lerp = Mathf.Lerp(startScale, endScale, t / totalTime);
             if (lerp <= 0.001f && lerp >= -0.001f) lerp = 0.001f;
-            transform.localScale = new Vector3(lerp, transform.localScale.y, transform.localScale.z);
+            spriteRenderer.transform.parent.localScale = new Vector3(lerp, spriteRenderer.transform.parent.localScale.y, spriteRenderer.transform.parent.localScale.z);
             t += Time.deltaTime;
             if (t > totalTime) t = totalTime;
             yield return null;
         }
 
-        transform.localScale = new Vector3(endScale, transform.localScale.y, transform.localScale.z);
+       spriteRenderer.transform.parent.localScale = new Vector3(endScale, spriteRenderer.transform.parent.localScale.y, spriteRenderer.transform.parent.localScale.z);
         flipped = !flipped;
     }
 

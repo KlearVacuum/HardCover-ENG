@@ -61,13 +61,13 @@ public class Book : MonoBehaviour, IInteractableAndActionable
                             mRemainingKnowledge > 0))
                     {
                         GlobalGameData.timeManager.AddTime();
+                        GlobalGameData.playerStats.AdjustKnowledge((int)((float)KnowledgeToPlayer * (float)ProgressionPerHour / 100));
                     }
                 }
             }
             else
             {
                 actionOver = true;
-                GlobalGameData.playerStats.AdjustKnowledge(KnowledgeToPlayer);
                 EndAction();
             }
 
