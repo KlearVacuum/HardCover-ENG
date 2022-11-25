@@ -10,10 +10,6 @@ public class WorkTable : MonoBehaviour, IInteractableAndActionable
 
     private bool isInteracting;
 
-    private int mHoursSkipped = 0;
-    private bool m12Trigger = false;
-    private bool m24Trigger = false;
-    private bool m36Trigger = false;
     private bool mMarryTrigger = false;
 
     public void StartInteraction(GameObject interactor)
@@ -46,7 +42,7 @@ public class WorkTable : MonoBehaviour, IInteractableAndActionable
             // Start working
 
             // Time Progress
-            mHoursSkipped += GlobalGameData.timeManager.HoursPassedFrom(WorkTimeStart);
+            GlobalGameData.timeManager.HoursSkipped(GlobalGameData.timeManager.HoursPassedFrom(WorkTimeStart));
             int hoursWorked = GlobalGameData.timeManager.AddTimeUntil(WorkTimeEnd);
 
             // Money Progress
@@ -58,19 +54,21 @@ public class WorkTable : MonoBehaviour, IInteractableAndActionable
             Debug.Log("Not Working Hours");
         }
 
-        if (mHoursSkipped >= 36 && !m36Trigger)
+        int workSkipped = GlobalGameData.timeManager.GetHoursSkipped();
+
+        if (workSkipped >= 36 && !GlobalGameData.timeManager.m36Trigger)
         {
-            m36Trigger = true;
+            GlobalGameData.timeManager.m36Trigger = true;
             GlobalGameData.dialogManager.StartChat("Ting Hoon", "AmandaSkipWork36");
         }
-        else if (mHoursSkipped >= 24 && !m24Trigger)
+        else if (workSkipped >= 24 && !GlobalGameData.timeManager.m24Trigger)
         {
-            m24Trigger = true;
+            GlobalGameData.timeManager.m24Trigger = true;
             GlobalGameData.dialogManager.StartChat("Ting Hoon", "AmandaSkipWork24");
         }
-        else if (mHoursSkipped >= 12 && !m12Trigger)
+        else if (workSkipped >= 12 && !GlobalGameData.timeManager.m12Trigger)
         {
-            m12Trigger = true;
+            GlobalGameData.timeManager.m12Trigger = true;
             GlobalGameData.dialogManager.StartChat("Ting Hoon", "AmandaSkipWork12");
         }
 

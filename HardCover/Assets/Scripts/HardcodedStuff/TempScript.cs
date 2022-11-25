@@ -6,9 +6,11 @@ public class TempScript : MonoBehaviour
 {
     public string Speaker;
     public string Key;
+    public int Time;
 
     public bool TriggerDialog = false;
     public bool TriggerChoicedDialog = false;
+    public bool TriggerTimeSkip = false;
 
     private void Update()
     {
@@ -22,6 +24,12 @@ public class TempScript : MonoBehaviour
         {
             TriggerChoicedDialog = false;
             GlobalGameData.choiceDialogManager.StartChat(Speaker, Key);
+        }
+
+        if (TriggerTimeSkip)
+        {
+            TriggerTimeSkip = false;
+            GlobalGameData.timeManager.AddTime(Time);
         }
     }
 

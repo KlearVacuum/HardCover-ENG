@@ -26,6 +26,13 @@ public class DayNightCycleManager : MonoBehaviour
     public static int WorkStartTime = 6;
     public static int WorkEndTime = 18;
     public static int SleepTime = 22;
+    public static int HoursOfWorkPerDay = 12;
+
+    private int mWorkSkipped = 0;
+    public bool mWorkedToday = false;
+    public bool m12Trigger = false;
+    public bool m24Trigger = false;
+    public bool m36Trigger = false;
 
     private static readonly Dictionary<int, string> dayNameMap
         = new Dictionary<int, string>()
@@ -97,7 +104,9 @@ public class DayNightCycleManager : MonoBehaviour
 
         if (Vector4.Distance(currColor, desiredColor) <= 0.02f) return;
 
-        Camera.main.backgroundColor += new Color(desiredColor.r - currColor.r, desiredColor.g - currColor.g, desiredColor.b - currColor.b, desiredColor.a - currColor.a) * Time.deltaTime * skyColorLerpSpeed;
+        Camera.main.backgroundColor +=
+            new Color(desiredColor.r - currColor.r, desiredColor.g - currColor.g, desiredColor.b - currColor.b,
+                desiredColor.a - currColor.a) * Time.deltaTime * skyColorLerpSpeed;
     }
 
     Color GetDesiredSkyColor()
@@ -193,7 +202,33 @@ public class DayNightCycleManager : MonoBehaviour
         while (mTime >= 24)
         {
             mTime -= 24;
+            if (mDay != 7 && mDay != 14 && mWorkedToday == false)
+            {
+                mWorkSkipped += HoursOfWorkPerDay;
+                Debug.Log("Hours Skipped: " + mWorkSkipped);
+            }
+            else
+            {
+                mWorkedToday = false;
+            }
+
             ++mDay;
+        }
+
+        if (mWorkSkipped >= 36 && !m36Trigger)
+        {
+            m36Trigger = true;
+            GlobalGameData.dialogManager.StartChat("Ting Hoon", "AmandaSkipWork36");
+        }
+        else if (mWorkSkipped >= 24 && !m24Trigger)
+        {
+            m24Trigger = true;
+            GlobalGameData.dialogManager.StartChat("Ting Hoon", "AmandaSkipWork24");
+        }
+        else if (mWorkSkipped >= 12 && !m12Trigger)
+        {
+            m12Trigger = true;
+            GlobalGameData.dialogManager.StartChat("Ting Hoon", "AmandaSkipWork12");
         }
 
         if (mDay == 15 && mTime == 6)
@@ -206,6 +241,19 @@ public class DayNightCycleManager : MonoBehaviour
 
         foreach (var npc in GlobalGameData.allNPCs) npc.canTransit = true;
         UpdateUi();
+    }
+
+    public int GetHoursSkipped()
+    {
+        return mWorkSkipped;
+    }
+
+    public void HoursSkipped(int i)
+    {
+        mWorkedToday = true;
+        mWorkSkipped += i;
+        Debug.Log("Hours Skipped: " + mWorkSkipped);
+        Debug.Log("Hours Skipped2: " + i);
     }
 
     public int GetTime()
