@@ -23,6 +23,6 @@ public class CameraScript : MonoBehaviour
         desiredPos /= followTargets.Count;
         float distance = Vector2.Distance(transform.position, desiredPos);
         if (distance < 0.001f) return;
-        transform.position = (Vector3)Vector2.Lerp(transform.position, desiredPos, 0.005f) + offset;
+        transform.position = (Vector3)Vector2.Lerp(transform.position, desiredPos, 0.025f) + offset;
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EndController : MonoBehaviour
 {
+    public GameObject menu;
     private void Awake()
     {
         GlobalGameData.Reset();
@@ -22,5 +23,9 @@ public class EndController : MonoBehaviour
     public void GoToGame()
     {
         GlobalGameData.blackScreenOverlay.GoToScene("Main");
+    }
+    public void OpenMyMenu()
+    {
+        menu.SetActive(true);
     }
 }

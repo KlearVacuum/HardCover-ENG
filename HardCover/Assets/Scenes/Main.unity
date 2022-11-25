@@ -4822,7 +4822,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<u>Interactions</u>
 
-    People: E to talk
+    People: E to talk.
 
     Book: E to pick-up/drop,
     Space to read while held.
@@ -7820,7 +7820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followTargets:
   - {fileID: 1258042183}
-  offset: {x: 0, y: 0.025, z: -10}
+  offset: {x: 0, y: 0.1, z: -10}
 --- !u!1 &546130336
 GameObject:
   m_ObjectHideFlags: 0
@@ -8171,8 +8171,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speaker: Ting Hoon
   Key: ProposeMarriage
+  Time: 0
   TriggerDialog: 0
   TriggerChoicedDialog: 0
+  TriggerTimeSkip: 0
 --- !u!1 &577885568
 GameObject:
   m_ObjectHideFlags: 0
@@ -8309,7 +8311,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '>'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3637e9477bf420840ad36bef4c8420f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -8317,7 +8319,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8340,7 +8342,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -10793,7 +10795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5372549, g: 0.4745098, b: 0.4392157, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13492,7 +13494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5377358, g: 0.4734358, b: 0.4388127, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13975,7 +13977,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -13998,7 +14000,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -26627,6 +26629,10 @@ PrefabInstance:
     - target: {fileID: 1701307052, guid: 9229a6eae3dae844c921b94eaf3b88be, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075657036, guid: 9229a6eae3dae844c921b94eaf3b88be, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1591995789472230955, guid: 9229a6eae3dae844c921b94eaf3b88be, type: 3}
       propertyPath: cashUI
